@@ -1,0 +1,113 @@
+module register(
+  input wire [31:0] Wdat,
+  input wire CLK,
+  input wire Rnst,
+  input wire Ren00,
+  input wire Ren01,
+  input wire Ren02,
+  input wire Ren03,
+  input wire Ren04,
+  input wire Ren05,
+  input wire Ren06,
+  input wire Ren07,
+  input wire Ren08,
+  input wire Ren09,
+  input wire Ren10,
+  input wire Ren11,
+  input wire Ren12,
+  input wire Ren13,
+  input wire Ren14,
+  input wire Ren15,
+  input wire Ren16,
+  input wire Ren17,
+  input wire Ren18,
+  input wire Ren19,
+  input wire Ren20,
+  input wire Ren21,
+  input wire Ren22,
+  input wire Ren23,
+  input wire Ren24,
+  input wire Ren25,
+  input wire Ren26,
+  input wire Ren27,
+  input wire Ren28,
+  input wire Ren29,
+  input wire Ren30,
+  input wire Ren31,
+  output wire [31:0] Reg00,
+  output wire [31:0] Reg01,
+  output wire [31:0] Reg02,
+  output wire [31:0] Reg03,
+  output wire [31:0] Reg04,
+  output wire [31:0] Reg05,
+  output wire [31:0] Reg06,
+  output wire [31:0] Reg07,
+  output wire [31:0] Reg08,
+  output wire [31:0] Reg09,
+  output wire [31:0] Reg10,
+  output wire [31:0] Reg11,
+  output wire [31:0] Reg12,
+  output wire [31:0] Reg13,
+  output wire [31:0] Reg14,
+  output wire [31:0] Reg15,
+  output wire [31:0] Reg16,
+  output wire [31:0] Reg17,
+  output wire [31:0] Reg18,
+  output wire [31:0] Reg19,
+  output wire [31:0] Reg20,
+  output wire [31:0] Reg21,
+  output wire [31:0] Reg22,
+  output wire [31:0] Reg23,
+  output wire [31:0] Reg24,
+  output wire [31:0] Reg25,
+  output wire [31:0] Reg26,
+  output wire [31:0] Reg27,
+  output wire [31:0] Reg28,
+  output wire [31:0] Reg29,
+  output wire [31:0] Reg30,
+  output wire [31:0] Reg31
+);
+
+always_ff @(posedge CLK, negedge Rnst) begin
+  if (Rnst == 1'b0) begin
+    Reg00 = (Ren00 == 1'b1)?Wdat:'0;
+    Reg01 = (Ren01 == 1'b1)?Wdat:'0;
+    Reg02 = (Ren02 == 1'b1)?Wdat:'0;
+    Reg03 = (Ren03 == 1'b1)?Wdat:'0;
+    Reg04 = (Ren04 == 1'b1)?Wdat:'0;
+    Reg05 = (Ren05 == 1'b1)?Wdat:'0;
+    Reg06 = (Ren06 == 1'b1)?Wdat:'0;
+    Reg07 = (Ren07 == 1'b1)?Wdat:'0;
+    Reg08 = (Ren08 == 1'b1)?Wdat:'0;
+    Reg09 = (Ren09 == 1'b1)?Wdat:'0;
+    Reg10 = (Ren10 == 1'b1)?Wdat:'0;
+    Reg11 = (Ren11 == 1'b1)?Wdat:'0;
+    Reg12 = (Ren12 == 1'b1)?Wdat:'0;
+    Reg13 = (Ren13 == 1'b1)?Wdat:'0;
+    Reg14 = (Ren14 == 1'b1)?Wdat:'0;
+    Reg15 = (Ren15 == 1'b1)?Wdat:'0;
+    Reg16 = (Ren16 == 1'b1)?Wdat:'0;
+    Reg17 = (Ren17 == 1'b1)?Wdat:'0;
+    Reg18 = (Ren18 == 1'b1)?Wdat:'0;
+    Reg19 = (Ren19 == 1'b1)?Wdat:'0;
+    Reg20 = (Ren20 == 1'b1)?Wdat:'0;
+    Reg21 = (Ren21 == 1'b1)?Wdat:'0;
+    Reg22 = (Ren22 == 1'b1)?Wdat:'0;
+    Reg23 = (Ren23 == 1'b1)?Wdat:'0;
+    Reg24 = (Ren24 == 1'b1)?Wdat:'0;
+    Reg25 = (Ren25 == 1'b1)?Wdat:'0;
+    Reg26 = (Ren26 == 1'b1)?Wdat:'0;
+    Reg27 = (Ren27 == 1'b1)?Wdat:'0;
+    Reg28 = (Ren28 == 1'b1)?Wdat:'0;
+    Reg29 = (Ren29 == 1'b1)?Wdat:'0;
+    Reg30 = (Ren30 == 1'b1)?Wdat:'0;
+    Reg31 = (Ren31 == 1'b1)?Wdat:'0;
+  end
+
+  else if (Rnst == 1'b1) begin
+  end
+
+end
+
+endmodule
+

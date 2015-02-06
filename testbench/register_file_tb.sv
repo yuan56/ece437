@@ -28,7 +28,7 @@ module register_file_tb;
   // interface
   register_file_if rfif ();
   // test program
-  test PROG ();
+  test PROG (CLK, nRST, rfif);
   // DUT
 `ifndef MAPPED
   register_file DUT(CLK, nRST, rfif);
@@ -48,5 +48,62 @@ module register_file_tb;
 
 endmodule
 
-program test;
+program test
+(
+    input logic CLK,
+    output logic nRST,
+    register_file_if.tb rfif
+  );
+    parameter PERIOD = 10;
+
+    initial begin
+        $monitor("@%00g CLK = %b nRST = %b WEN = %b wsel = %b wdat = %b rsel1  = %b rsel2 = %b rdat1 = %b rdat2 = %b", $time, CLK, nRST, rfif.WEN, rfif.wsel, rfif.wdat, rfif.rsel1, rfif.rsel2, rfif.rdat1, rfif.rdat2);
+
+      
+        @(posedge CLK);
+
+        nRST = 1'b0;
+        rfif.WEN = 1'b1;
+        rfif.wsel = 5'b10000;
+        #(PERIOD)
+
+         @(posedge CLK);
+
+        nRST = 1'b1;
+        rfif.WEN = 1'b1;
+        rfif.wsel = 5'b10000;
+        rfif.wdat = 35;
+        #(PERIOD)
+
+        @(posedge CLK);
+
+        nRST = 1'b1;
+        rfif.WEN = 1'b1;
+        rfif.wsel = 5'b00000;
+        rfif.wdat = 35;
+        rfif.rsel1 = 5'b10000;
+        #(PERIOD)
+
+         @(posedge CLK);
+
+        nRST = 1'b1;
+        rfif.WEN = 1'b1;
+        rfif.wsel = 5'b10000;
+        rfif.wdat = 35;
+        rfif.rsel1 = 5'b10000;
+        #(PERIOD)
+
+         @(posedge CLK);
+
+        nRST = 1'b1;
+        rfif.WEN = 1'b1;
+        rfif.wsel = 5'b10000;
+        rfif.wdat = 35;
+        rfif.rsel2 = 5'b10000;
+        #(PERIOD)
+
+
+        $finish;
+    end
+
 endprogram

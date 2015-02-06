@@ -97,7 +97,8 @@ package cpu_types_pkg;
     ALU_NOR     = 4'b0111,
     ALU_SLT     = 4'b1010,
     ALU_SLTU    = 4'b1011
-  } aluop_t;
+  } aluop_t
+  ;
 
 // instruction format types
   // register bits types
