@@ -16,8 +16,9 @@ module alu
 	);
 
 	//typedef enum bit [4:0] {} STateType;
-	always @(aif.portA or aif.portB or aif.aluop) begin
-
+	//always @(aif.portA or aif.portB or aif.aluop) begin
+  always_comb begin
+    aif.outport <= 0;
 		if (aif.aluop == ALU_SLL) begin //ALU_SLL
 			 aif.outport <= aif.portA << aif.portB;
 			 //vflag <= 1'b0;
@@ -35,7 +36,7 @@ module alu
 
 		else if (aif.aluop == ALU_SUB) begin
 			aif.outport <= aif.portA - aif.portB;
-			 
+
 		end
 
 		else if (aif.aluop == ALU_AND) begin
@@ -70,7 +71,11 @@ module alu
 
 	end
 
-	always @(aif.outport, aif.portA, aif.portB, aif.aluop) begin
+	//always @(aif.outport, aif.portA, aif.portB, aif.aluop) begin
+  always_comb begin
+    aif.zflag <= 0;
+    aif.vflag <= 0;
+    aif.nflag <= 0;
 		if (aif.outport < 0) begin
 			//aif.nflag <= 1'b1;
 			aif.zflag <= 1'b0;

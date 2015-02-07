@@ -19,9 +19,7 @@ module control_unit (
 	//assign cuif.IRen = 1'b1;
 
 	always_comb begin
-		if (!nRST) begin
-			cuif.halt <= 1'b0;
-		end
+		
 		cuif.IRen = 1'b1;
 		cuif.DWen = 1'b0;
 		cuif.DRen = 1'b0;
@@ -261,7 +259,7 @@ module control_unit (
 				cuif.Jump = 1'b1;
 				cuif.Branch = 1'b0;
 				cuif.ALUop = ALU_AND;
-				cuif.RegWrite = 1'b0;
+				cuif.RegWrite = 1'b1;
 				cuif.ExtSel = 2'bzz;
 				cuif.MemtoReg = 2'b11;
 				cuif.ALUSrc = 2'bzz;
@@ -275,7 +273,7 @@ module control_unit (
 		    	cuif.DWen = 1'b0;
 				cuif.DRen = 1'b0;
 				cuif.Jump = 1'bz;
-				cuif.Branch = !cuif.zflag;
+				cuif.Branch = cuif.zflag;
 				cuif.ALUop = ALU_SUB;
 				cuif.RegWrite = 1'b0;
 				cuif.ExtSel = 2'b00;
@@ -290,7 +288,7 @@ module control_unit (
 		    	cuif.DWen = 1'b0;
 				cuif.DRen = 1'b0;
 				cuif.Jump = 1'bz;
-				cuif.Branch = cuif.zflag;
+				cuif.Branch = !cuif.zflag;
 				cuif.ALUop = ALU_SUB;
 				cuif.RegWrite = 1'b0;
 				cuif.ExtSel = 2'b00;

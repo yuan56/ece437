@@ -48,35 +48,46 @@ module datapath (
   word_t temp;
 
   // pc init
+
   parameter PC_INIT = 0;
 
-  assign temp = '{{27'b0, dpif.imemload[10:6]}};
+  always_ff @(posedge CLK, negedge nRST) begin
+    if (!nRST) begin
+      dpif.halt <= 0;
+    end
+    else begin
+      dpif.halt = cuif.halt;
+    end
+  end
+
+  assign temp = word_t'({27'b0, dpif.imemload[10:6]});
 
   //datapath outputs
-  assign dpif.halt = cuif.halt;
-  //assign dpif.halt = 1'b0;
+  //assign dpif.halt = cuif.halt;
   assign dpif.imemREN = quif.iREN;
   assign dpif.imemaddr = pcif.PCcurr;
   assign dpif.dmemREN = quif.dREN;
   assign dpif.dmemWEN = quif.dWEN;
 
-  assign dpif.dmemaddr = aif.outport; 
+  assign dpif.dmemaddr = aif.outport;
   assign dpif.dmemstore = rfif.rdat2;
 
 
-  //temp registers
+  //temp registersf
   assign npc = 32'h0004 + pcif.PCcurr;
 
- 
-  always_comb begin
 
+  always_comb begin
+    //J_mux_out = rfif.rdat1;
     if (cuif.Jump == 1'b1) begin
-      J_mux_out = '{{npc[31:28], dpif.imemload[25:0], 2'b00}};
+      J_mux_out = word_t'({npc[31:28], dpif.imemload[25:0], 2'b00});
     end
 
-    else if (cuif.Jump == 1'b0) begin
+    else begin //if (cuif.Jump == 1'b0) begin
       J_mux_out = rfif.rdat1;
     end
+
+
 
     if (cuif.MemtoReg == 2'b00) begin
       MtR_mux_out = aif.outport;
@@ -94,26 +105,35 @@ module datapath (
       MtR_mux_out = npc;
     end
 
+    else begin
+      MtR_mux_out = aif.outport;
+    end
+
     if (cuif.Branch == 1'b0) begin
         B_mux_out = npc;
     end
 
-    else if (cuif.Branch == 1'b1) begin
-        B_mux_out = npc + eif.extout << 2;
+    else begin //if (cuif.Branch == 1'b1) begin
+        B_mux_out = npc + eif.extout;
     end
 
 
 
     if (cuif.RegDst == 2'b00) begin
-        rfif.wsel = '{dpif.imemload[20:16]}; //rt
+        rfif.wsel = regbits_t'(dpif.imemload[20:16]); //rt
     end
 
     else if (cuif.RegDst == 2'b01) begin
-        rfif.wsel = '{dpif.imemload[15:11]}; //rd
+        rfif.wsel = regbits_t'(dpif.imemload[15:11]); //rd
     end
 
-    else if (cuif.RegDst == 2'b11) begin
-        rfif.wsel = '{{5'b11111}}; //for JAL
+    else if (cuif.RegDst == 2'b10) begin
+        rfif.wsel = regbits_t'({5'b11111}); //for JAL
+    end
+
+    else begin
+        rfif.wsel = regbits_t'(dpif.imemload[20:16]); //rt
+
     end
 
 
@@ -121,10 +141,11 @@ module datapath (
         pcif.PCnext = B_mux_out;
     end
 
-    else if (cuif.PCSrc == 1'b1) begin
+    else begin 
         pcif.PCnext = J_mux_out;
     end
-
+    
+  
 
     if (cuif.ALUSrc == 2'b00) begin
         aif.portB = rfif.rdat2;
@@ -146,9 +167,9 @@ module datapath (
 
   //register file inputs
   //  - from instructions
-  assign rfif.rsel1 = '{dpif.imemload[25:21]};     //rreg1 <= rs
-  assign rfif.rsel2 = '{dpif.imemload[20:16]};     //rreg2 <= rt
- 
+  assign rfif.rsel1 = regbits_t'(dpif.imemload[25:21]);     //rreg1 <= rs
+  assign rfif.rsel2 = regbits_t'(dpif.imemload[20:16]);     //rreg2 <= rt
+
 
   //  - from MemtoReg mux
   assign rfif.wdat = MtR_mux_out;
@@ -157,8 +178,8 @@ module datapath (
 
   //control unit inputs
   //  - from instructions
-  assign cuif.op = '{dpif.imemload[31:26]};         
-  assign cuif.funct = '{dpif.imemload[5:0]};
+  assign cuif.op = opcode_t'(dpif.imemload[31:26]);
+  assign cuif.funct = funct_t'(dpif.imemload[5:0]);
   //  - from ALU
   assign cuif.zflag = aif.zflag;
   assign cuif.vflag = aif.vflag;
@@ -173,26 +194,13 @@ module datapath (
   assign quif.ihit = dpif.ihit;
 
   //program counter inputs
-  assign pcif.PCen = quif.PCen;
-  //  - from PCSrc mux
+  assign pcif.PCen = quif.PCen & !dpif.halt;
 
-  
-/*always_comb begin
-    casez (cuif.ALUSrc)
-      2'b00:
-        aif.portB = rfif.rdat2;
-      2'b01:
-        aif.portB = eif.extout;
-      2'b10:
-        aif.portB = temp;
-      default:
-        aif.portB = rfif.rdat2;
-    endcase
-  end*/
+
   //ALU inputs
   //  - from register file
   assign aif.portA = rfif.rdat1;
-  
+
   //  - from control unit
   assign aif.aluop = cuif.ALUop;
 
