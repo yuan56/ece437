@@ -16,8 +16,7 @@ module request_unit (
 	);
 
 	import cpu_types_pkg::*;
-   assign quif.PCen = quif.ihit;
- // && !quif.dhit;
+   assign quif.PCen = quif.ihit && !quif.dhit;
 
   	assign quif.iREN = 1;
   	

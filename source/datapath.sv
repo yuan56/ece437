@@ -144,8 +144,7 @@ module datapath (
   assign mwif.MemtoReg_i = emif.MemtoReg_o;
 
   //datapath inputs
-   assign dpif.halt = 0;
- //mwif.halt_o;
+   assign dpif.halt = mwif.halt_o;
   assign dpif.imemREN = 1'b1;
   assign dpif.imemaddr = pcif.PCcurr;
   assign dpif.dmemREN = quif.dREN;

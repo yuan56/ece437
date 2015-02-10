@@ -1,3 +1,4 @@
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
 # //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
 # //
 # //  Copyright 1991-2013 Mentor Graphics Corporation
@@ -7,7 +8,6 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {view objects; do scripts/system.do; run -all;} -onfinish stop -wlf system_tb.wlf work.system_tb 
 # Loading sv_std.std
 # Loading work.system_tb
 # Loading work.cpu_types_pkg
@@ -53,9 +53,8 @@
 #         Region: /system_tb/DUT/CPU/DP/idex
 # ** Error: (vsim-3766) The modport 'ii' was not found in interface 'ifid_if'.
 #         Region: /system_tb/DUT/CPU/DP/ifid
-# view objects 
-# .main_pane.objects.interior.cs.body.tree
-#  do scripts/system.do 
-#  run -all 
+# run -all 
 # Starting Processor.
-#  
+# Halted at 760 time and ran for         37 cycles.
+# Starting memory dump.
+# Finished memory dump.

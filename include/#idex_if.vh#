@@ -30,6 +30,8 @@ interface idex_if;
 				ALUSrc_i, ALUSrc_o;
 
 	aluop_t		ALUop_i, ALUop_o;
+
+        
 				
 				
 

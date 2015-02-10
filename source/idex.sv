@@ -29,6 +29,7 @@ module idex
 			ieif.ALUop_o <= ALU_ADD;
 			ieif.RegWrite_o <= 0;
 			ieif.RegDst_o <= 0;
+		        ieif.halt_o <= 0;
 		end
 		
 		else begin
@@ -45,6 +46,7 @@ module idex
 			ieif.ALUop_o <= ieif.ALUop_i;
 			ieif.RegWrite_o <= ieif.RegWrite_i;
 			ieif.RegDst_o <= ieif.RegDst_i;
+		        ieif.halt_o <= ieif.halt_i;
 		end
 	end
 
