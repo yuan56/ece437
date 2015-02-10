@@ -9,7 +9,7 @@
 // all types
 `include "cpu_types_pkg.vh"
 
-interface memwb;
+interface memwb_if;
 	//import types
 	import cpu_types_pkg::*;
 
@@ -26,7 +26,7 @@ interface memwb;
 	logic [1:0] MemtoReg_i, MemtoReg_o;
 				
 
-	modport mw (
+	modport mwif (
 		input 	npc_i, Jaddr_i, aluout_i, extout_i, MemtoReg_i, dload_i, RegDst_i, RegWrite_i, halt_i,
 		output 	npc_o, Jaddr_o, aluout_o, extout_o, MemtoReg_o, dload_o, RegDst_o, RegWrite_o, halt_o
 		);

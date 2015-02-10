@@ -26,7 +26,8 @@ interface control_unit_if;
 	logic			zflag;
 
 	//Output signals
-	logic 			RegWrite, Branch, Jump, PCSrc;
+	logic 			RegWrite, Branch, Jump;
+	logic [1:0] PCSrc;
 	aluop_t			ALUop;
 	logic [1:0] 	RegDst, ExtSel, ALUSrc, MemtoReg;	
 

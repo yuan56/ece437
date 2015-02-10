@@ -15,8 +15,8 @@ interface ifid_if;
 
 	word_t 		npc_i, npc_o, iload_i, iload_o; 
 
-	modport ii (
-		input 	npc_i, iload_i;
+	modport iiif (
+		input 	npc_i, iload_i,
 		output 	npc_o, iload_o
 		);
 

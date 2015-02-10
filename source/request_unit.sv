@@ -16,14 +16,16 @@ module request_unit (
 	);
 
 	import cpu_types_pkg::*;
-	assign quif.PCen = quif.ihit && !quif.dhit;
+   assign quif.PCen = quif.ihit;
+ // && !quif.dhit;
 
-  assign quif.iREN = 1;
+  	assign quif.iREN = 1;
+  	
 	always_ff @(posedge CLK or negedge nRST) begin
 		if (!nRST) begin
 			quif.dREN <= 1'b0;
 			quif.dWEN <= 1'b0;
-			//quif.iREN <= 1'b0;
+			//quif.iREN <= 1'b1;
 		end
 
 		else begin

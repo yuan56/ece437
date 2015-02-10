@@ -91,7 +91,7 @@ module control_unit (
 						cuif.MemtoReg = 2'b00;
 						cuif.ALUSrc = 2'b00;
 						cuif.RegDst = 2'b01;
-						cuif.halt = cuif.vflag;
+						//cuif.halt = cuif.vflag;
 						cuif.PCSrc = 1'b0;
 				    end
 
@@ -121,7 +121,7 @@ module control_unit (
 						cuif.MemtoReg = 2'b00;
 						cuif.ALUSrc = 2'b00;
 						cuif.RegDst = 2'b01;
-						cuif.halt = cuif.vflag;
+						//cuif.halt = cuif.vflag;
 						cuif.PCSrc = 1'b0;
 				    end
 
@@ -211,7 +211,7 @@ module control_unit (
 						cuif.MemtoReg = 2'b00;
 						cuif.ALUSrc = 2'b00;
 						cuif.RegDst = 2'b01;
-						cuif.halt = cuif.vflag;
+						//cuif.halt = cuif.vflag;
 						cuif.PCSrc = 1'b0;
 				    end
 				    
@@ -281,7 +281,7 @@ module control_unit (
 				cuif.ALUSrc = 2'b00;
 				cuif.RegDst = 2'b01;
 				cuif.halt = 1'b0;
-				cuif.PCSrc = 1'b0;
+				cuif.PCSrc = 2;
 		    end
 
 		    BNE: begin
@@ -296,7 +296,7 @@ module control_unit (
 				cuif.ALUSrc = 2'b00;
 				cuif.RegDst = 2'b01;
 				cuif.halt = 1'b0;
-				cuif.PCSrc = 1'b0;
+				cuif.PCSrc = 2;
 		    end
 
 		    ADDI: begin

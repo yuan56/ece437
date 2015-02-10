@@ -1,7 +1,4 @@
 /*
-  Zejun Yuan
-  yuan56@purdue.edu
-
   datapath contains register file, control, hazard,
   muxes, and glue logic for processor
 */
@@ -14,6 +11,10 @@
 `include "register_file_if.vh"
 `include "alu_if.vh"
 `include "extender_if.vh"
+`include "ifid_if.vh"
+`include "idex_if.vh"
+`include "exmem_if.vh"
+`include "memwb_if.vh"
 
 // alu op, mips op, and instruction type
 `include "cpu_types_pkg.vh"
@@ -26,10 +27,14 @@ module datapath (
   import cpu_types_pkg::*;
   request_unit_if quif();           //request unit interface
   extender_if eif();                //extender interface
-  control_unit_if cuif();            //control unit interface
-  program_counter_if pcif();         //program counter interface
-  register_file_if rfif();           //register file interface
-  alu_if aif();                    //alu interface
+  control_unit_if cuif();           //control unit interface
+  program_counter_if pcif();        //program counter interface
+  register_file_if rfif();          //register file interface
+  alu_if aif();                     //alu interface
+  ifid_if iiif();                   //IF / ID interface
+  idex_if ieif();                   //ID / EX interface
+  exmem_if emif();                  //EX / MEM interface
+  memwb_if mwif();                  //MEM / WB interface
 
   request_unit qu (CLK, nRST, quif);
   pc pc (pcif, CLK, nRST);
@@ -37,177 +42,221 @@ module datapath (
   register_file rf (CLK, nRST, rfif);
   alu alu (aif);
   extender ext (eif);
+  ifid ifid(CLK, nRST, iiif);
+  idex idex(CLK, nRST, ieif);
+  exmem exmem (CLK, nRST, emif);
+  memwb memwb (CLK, nRST, mwif);  
+
+  //mux outputs
+  word_t      PCSrc_out;             //PCSrc mux output
+  word_t      MtR_out;               //MemiftoReg mux output
+  word_t      Jaddr;                 //Jump mux output
+  word_t      ALUSrc_out;            //ALUSrc mux output
+  word_t      Baddr;                 //Branch mux output
+  regbits_t   RegDst_out;            //RegDst mux output
 
 
-  word_t npc;
+  //adder outputs
+  word_t    npc;                   //npc in IF stage
 
-  word_t MtR_mux_out;
-  word_t J_mux_out;
-  word_t B_mux_out;
-
-  word_t temp;
+  assign npc = pcif.PCcurr + 4;
 
   // pc init
-
   parameter PC_INIT = 0;
 
-  always_ff @(posedge CLK, negedge nRST) begin
-    if (!nRST) begin
-      dpif.halt <= 0;
-    end
-    else begin
-      dpif.halt = cuif.halt;
-    end
-  end
 
-  assign temp = word_t'({27'b0, dpif.imemload[10:6]});
+  //PC inputs
+  assign pcif.PCnext = PCSrc_out;
+  assign pcif.PCen = quif.PCen;
 
-  //datapath outputs
-  //assign dpif.halt = cuif.halt;
-  assign dpif.imemREN = quif.iREN;
+  //ifid inputs
+  assign iiif.npc_i = npc;
+  assign iiif.iload_i = dpif.imemload;
+
+  //Reg File inputs
+  assign rfif.rsel1 = regbits_t'(iiif.iload_o[25:21]);        //rs
+  assign rfif.rsel2 = regbits_t'(iiif.iload_o[20:16]);        //rt
+  assign rfif.wsel = RegDst_out;
+  assign rfif.wdat = MtR_out;
+  assign rfif.WEN = mwif.RegWrite_o;
+
+  //Extender inputs
+  assign eif.imm = iiif.iload_o[15:0];                        //imm
+  assign eif.ExtSel = cuif.ExtSel;                          
+
+  //control unit inputs
+  assign cuif.op = opcode_t'(iiif.iload_o[31:26]);           //op
+  assign cuif.funct = funct_t'(iiif.iload_o[5:0]);          //funct
+  assign cuif.vflag = aif.vflag;
+  assign cuif.zflag = aif.zflag;
+
+  //idex inputs
+  assign ieif.npc_i = iiif.npc_o;
+  assign ieif.Jaddr_i = Jaddr;
+  assign ieif.rdata1_i = rfif.rdat1;
+  assign ieif.rdata2_i = rfif.rdat2;
+  assign ieif.extout_i = eif.extout;
+  assign ieif.Branch_i = cuif.Branch;
+  assign ieif.DRen_i = cuif.DRen;
+  assign ieif.DWen_i = cuif.DWen;
+  assign ieif.RegWrite_i = cuif.RegWrite;
+  assign ieif.RegDst_i = cuif.RegDst;
+  assign ieif.halt_i = cuif.halt;
+  assign ieif.MemtoReg_i = cuif.MemtoReg;
+  assign ieif.ALUSrc_i = cuif.ALUSrc;
+  assign ieif.ALUop_i = cuif.ALUop;
+
+  //ALU inputs
+  assign aif.portA = ieif.rdata1_o;
+  assign aif.portB = ALUSrc_out;
+  assign aif.aluop = ieif.ALUop_o;
+
+  //exmemif inputs
+  assign emif.npc_i = ieif.npc_o;
+  assign emif.bnpc_i = ieif.npc_o + ieif.extout_o;          //Branch address
+  assign emif.Jaddr_i = ieif.Jaddr_o;
+  assign emif.rdata2_i = ieif.rdata2_o;
+  assign emif.aluout_i = aif.outport;
+  assign emif.extout_i = ieif.extout_o;
+  assign emif.Branch_i = ieif.Branch_o;
+  assign emif.DRen_i = ieif.DRen_o;
+  assign emif.DWen_i = ieif.DWen_o;
+  assign emif.RegWrite_i = ieif.RegWrite_o;
+  assign emif.RegDst_i = ieif.RegDst_o;
+  assign emif.halt_i = ieif.halt_o;
+  assign emif.MemtoReg_i = ieif.MemtoReg_o;
+  assign emif.ALUSrc_i = ieif.ALUSrc_o;
+
+  //request unit inputs
+  assign quif.DWen = emif.DWen_o;
+  assign quif.DRen = emif.DRen_o;
+   assign quif.ihit = dpif.ihit;
+      assign quif.dhit = dpif.dhit;
+  //memifwb inputs
+  assign mwif.npc_i = emif.npc_o;
+  assign mwif.Jaddr_i = emif.Jaddr_o;
+  assign mwif.aluout_i = emif.aluout_o;
+  assign mwif.dload_i = dpif.dmemload;
+  assign mwif.extout_i = emif.extout_o;
+  assign mwif.halt_i = emif.halt_o;
+  assign mwif.RegDst_i = emif.RegDst_o;
+  assign mwif.RegWrite_i = emif.RegWrite_o;
+  assign mwif.MemtoReg_i = emif.MemtoReg_o;
+
+  //datapath inputs
+   assign dpif.halt = 0;
+ //mwif.halt_o;
+  assign dpif.imemREN = 1'b1;
   assign dpif.imemaddr = pcif.PCcurr;
   assign dpif.dmemREN = quif.dREN;
   assign dpif.dmemWEN = quif.dWEN;
-
-  assign dpif.dmemaddr = aif.outport;
-  assign dpif.dmemstore = rfif.rdat2;
-
-
-  //temp registersf
-  assign npc = 32'h0004 + pcif.PCcurr;
-
-
-  always_comb begin
-    //J_mux_out = rfif.rdat1;
-    if (cuif.Jump == 1'b1) begin
-      J_mux_out = word_t'({npc[31:28], dpif.imemload[25:0], 2'b00});
-    end
-
-    else begin //if (cuif.Jump == 1'b0) begin
-      J_mux_out = rfif.rdat1;
-    end
-
-
-
-    if (cuif.MemtoReg == 2'b00) begin
-      MtR_mux_out = aif.outport;
-    end
-
-    else if (cuif.MemtoReg == 2'b01) begin
-      MtR_mux_out = dpif.dmemload;
-    end
-
-    else if (cuif.MemtoReg == 2'b10) begin
-      MtR_mux_out = eif.extout;
-    end
-
-    else if (cuif.MemtoReg == 2'b11) begin
-      MtR_mux_out = npc;
-    end
-
-    else begin
-      MtR_mux_out = aif.outport;
-    end
-
-    if (cuif.Branch == 1'b0) begin
-        B_mux_out = npc;
-    end
-
-    else begin //if (cuif.Branch == 1'b1) begin
-        B_mux_out = npc + eif.extout;
-    end
-
-
-
-    if (cuif.RegDst == 2'b00) begin
-        rfif.wsel = regbits_t'(dpif.imemload[20:16]); //rt
-    end
-
-    else if (cuif.RegDst == 2'b01) begin
-        rfif.wsel = regbits_t'(dpif.imemload[15:11]); //rd
-    end
-
-    else if (cuif.RegDst == 2'b10) begin
-        rfif.wsel = regbits_t'({5'b11111}); //for JAL
-    end
-
-    else begin
-        rfif.wsel = regbits_t'(dpif.imemload[20:16]); //rt
-
-    end
-
-
-    if (cuif.PCSrc == 1'b0) begin
-        pcif.PCnext = B_mux_out;
-    end
-
-    else begin 
-        pcif.PCnext = J_mux_out;
-    end
-    
+  assign dpif.dmemstore = emif.rdata2_o;
+  assign dpif.dmemaddr = emif.aluout_o;
   
 
-    if (cuif.ALUSrc == 2'b00) begin
-        aif.portB = rfif.rdat2;
+  always_comb begin
+    //PCSrc mux
+    if (cuif.PCSrc == 2'b01) begin        //Jumpaddr
+      PCSrc_out = mwif.Jaddr_o;           
+    end
+    
+    else if (cuif.PCSrc == 2'b10) begin   //Branch address
+      PCSrc_out = Baddr;
+    end
+    
+    else if (cuif.PCSrc == 2'b00) begin   //npc
+      PCSrc_out = npc;
+    end
+    
+    else begin
+      PCSrc_out = npc;
     end
 
-    else if (cuif.ALUSrc == 2'b01) begin
-        aif.portB = eif.extout;
+
+    //RegDst mux
+    if (mwif.RegDst_o == 2'b01) begin      //rd
+      RegDst_out = regbits_t'(iiif.iload_o[15:11]);
     end
 
-    else if (cuif.ALUSrc == 2'b10) begin
-        aif.portB = temp;
+    else if (mwif.RegDst_o == 2'b11) begin //JAR instruction
+      RegDst_out = regbits_t'({5'b11111});
+    end
+
+    else if (mwif.RegDst_o == 2'b00) begin //rt
+      RegDst_out = regbits_t'(iiif.iload_o[20:16]);
     end
 
     else begin
-        aif.portB = rfif.rdat2;
+      RegDst_out = regbits_t'(iiif.iload_o[20:16]);
+    end
+
+
+    //Jump mux
+    if (cuif.Jump == 1'b0) begin           //J & JAL instructions
+      Jaddr = word_t'({npc[31:28], iiif.iload_o[25:0], 2'b00});
+    end
+
+    else if (cuif.Jump == 1'b1) begin      //JR instruction
+      Jaddr = rfif.rdat1;
+    end
+
+    else begin
+      Jaddr = rfif.rdat1;
+    end
+
+
+    //ALUSrc mux
+    if (ieif.ALUSrc_o == 2'b00) begin      //register file rdata2
+      ALUSrc_out = ieif.rdata2_o;
+    end
+
+    else if (ieif.ALUSrc_o == 2'b01) begin //extender output
+      ALUSrc_out = ieif.extout_o;
+    end
+
+    else if (ieif.ALUSrc_o == 2'b10) begin //LUI instruction
+      ALUSrc_out = word_t'({27'b0, iiif.iload_o[10:6]});
+    end
+
+    else begin
+      ALUSrc_out = ieif.rdata2_o;
+    end
+
+
+    //Branch mux
+    if (emif.Branch_o == 1'b0) begin       //npc
+      Baddr = emif.npc_o;
+    end
+
+    else if (emif.Branch_o == 1'b1) begin  //Branch address
+      Baddr = emif.bnpc_o;
+    end
+
+    else begin
+      Baddr = emif.npc_o;
+    end
+
+    //MemiftoReg mux
+    if (mwif.MemtoReg_o == 2'b00) begin                           //ALU outputs (for R-type instructinos except for JR)
+      MtR_out = mwif.aluout_o;
+    end
+
+    else if (mwif.MemtoReg_o == 2'b01) begin                      //SW instruction
+      MtR_out = mwif.dload_o;
+    end
+
+    else if (mwif.MemtoReg_o == 2'b10) begin                      //extout
+      MtR_out = mwif.extout_o;
+    end
+
+    else if (mwif.MemtoReg_o == 2'b11) begin                      //JAL instruction
+      MtR_out = mwif.npc_o;
+    end
+
+    else begin
+      MtR_out = mwif.aluout_o;
     end
 
   end
-
-  //register file inputs
-  //  - from instructions
-  assign rfif.rsel1 = regbits_t'(dpif.imemload[25:21]);     //rreg1 <= rs
-  assign rfif.rsel2 = regbits_t'(dpif.imemload[20:16]);     //rreg2 <= rt
-
-
-  //  - from MemtoReg mux
-  assign rfif.wdat = MtR_mux_out;
-  //  - from control unit
-  assign rfif.WEN = cuif.RegWrite;
-
-  //control unit inputs
-  //  - from instructions
-  assign cuif.op = opcode_t'(dpif.imemload[31:26]);
-  assign cuif.funct = funct_t'(dpif.imemload[5:0]);
-  //  - from ALU
-  assign cuif.zflag = aif.zflag;
-  assign cuif.vflag = aif.vflag;
-
-  //request unit inputs
-  //  - from control unit
-  assign quif.DWen = cuif.DWen;
-  assign quif.DRen = cuif.DRen;
-  assign quif.IRen = cuif.IRen;
-  //  - from outside of datapath block
-  assign quif.dhit = dpif.dhit;
-  assign quif.ihit = dpif.ihit;
-
-  //program counter inputs
-  assign pcif.PCen = quif.PCen & !dpif.halt;
-
-
-  //ALU inputs
-  //  - from register file
-  assign aif.portA = rfif.rdat1;
-
-  //  - from control unit
-  assign aif.aluop = cuif.ALUop;
-
-
-  //Extender
-  //  - from instructions
-  assign eif.imm = dpif.imemload[15:0];         //type correct?
-  assign eif.ExtSel = cuif.ExtSel;
-
+  
 endmodule

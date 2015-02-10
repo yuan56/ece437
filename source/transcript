@@ -1,0 +1,587 @@
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.3.3.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+vlib ./work
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/decoder.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/decoder.sv(38): near "assign": syntax error, unexpected assign, expecting ';'
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/decoder.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder
+# 
+# Top level modules:
+# 	decoder
+vlib work
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/decoder.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder
+# 
+# Top level modules:
+# 	decoder
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# ** Warning: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(77): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(76): (vlog-2110) Illegal reference to net "Wen_tb".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(77): (vlog-2110) Illegal reference to net "Wsel_tb".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(76): (vlog-2110) Illegal reference to net "Wen_tb".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(77): (vlog-2110) Illegal reference to net "Wsel_tb".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(76): (vlog-2110) Illegal reference to net "Wen_tb".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(77): (vlog-2110) Illegal reference to net "Wsel_tb".
+vlib work
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/decoder.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder
+# 
+# Top level modules:
+# 	decoder
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(76): (vlog-2110) Illegal reference to net "Wen_tb".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(77): (vlog-2110) Illegal reference to net "Wsel_tb".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(35): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(77): (vlog-2730) Undefined variable: 'Wsel_tb'.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(35): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv(77): (vlog-2730) Undefined variable: 'Wsel_tb'.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# 
+# Top level modules:
+# 	decoder_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# 
+# Top level modules:
+# 	decoder_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/decoder_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module decoder_tb
+# 
+# Top level modules:
+# 	decoder_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(73): (vlog-2110) Illegal reference to net "Reg00".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(74): (vlog-2110) Illegal reference to net "Reg01".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(75): (vlog-2110) Illegal reference to net "Reg02".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(76): (vlog-2110) Illegal reference to net "Reg03".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(77): (vlog-2110) Illegal reference to net "Reg04".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(78): (vlog-2110) Illegal reference to net "Reg05".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(79): (vlog-2110) Illegal reference to net "Reg06".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(80): (vlog-2110) Illegal reference to net "Reg07".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(81): (vlog-2110) Illegal reference to net "Reg08".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(82): (vlog-2110) Illegal reference to net "Reg09".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(83): (vlog-2110) Illegal reference to net "Reg10".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(84): (vlog-2110) Illegal reference to net "Reg11".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(85): (vlog-2110) Illegal reference to net "Reg12".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(86): (vlog-2110) Illegal reference to net "Reg13".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(87): (vlog-2110) Illegal reference to net "Reg14".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(88): (vlog-2110) Illegal reference to net "Reg15".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(89): (vlog-2110) Illegal reference to net "Reg16".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(90): (vlog-2110) Illegal reference to net "Reg17".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(91): (vlog-2110) Illegal reference to net "Reg18".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(92): (vlog-2110) Illegal reference to net "Reg19".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(93): (vlog-2110) Illegal reference to net "Reg20".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(94): (vlog-2110) Illegal reference to net "Reg21".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(95): (vlog-2110) Illegal reference to net "Reg22".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(96): (vlog-2110) Illegal reference to net "Reg23".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(97): (vlog-2110) Illegal reference to net "Reg24".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(98): (vlog-2110) Illegal reference to net "Reg25".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(99): (vlog-2110) Illegal reference to net "Reg26".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(100): (vlog-2110) Illegal reference to net "Reg27".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(101): (vlog-2110) Illegal reference to net "Reg28".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(102): (vlog-2110) Illegal reference to net "Reg29".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(103): (vlog-2110) Illegal reference to net "Reg30".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(104): (vlog-2110) Illegal reference to net "Reg31".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(71): near "always_ff": syntax error, unexpected always_ff, expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/register.sv(71): near "always_ff": syntax error, unexpected always_ff, expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(150): near ")": syntax error, unexpected ')', expecting .* or '.'
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(155): (vlog-2730) Undefined variable: 'Rnst'.
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(156): (vlog-2730) Undefined variable: 'Wdat'.
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(160): (vlog-2730) Undefined variable: 'Ren14'.
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(161): (vlog-2730) Undefined variable: 'Ren13'.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# 
+# Top level modules:
+# 	register_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# 
+# Top level modules:
+# 	register_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(150): near ")": syntax error, unexpected ')', expecting .* or '.'
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(155): (vlog-2730) Undefined variable: 'Rnst'.
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(156): (vlog-2730) Undefined variable: 'Wdat'.
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(160): (vlog-2730) Undefined variable: 'Ren14'.
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv(161): (vlog-2730) Undefined variable: 'Ren13'.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# 
+# Top level modules:
+# 	register_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# 
+# Top level modules:
+# 	register_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/register.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module register_tb
+# 
+# Top level modules:
+# 	register_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(39): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(43): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(47): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(51): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(55): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(59): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(63): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(67): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(71): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(75): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(79): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(83): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(87): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(91): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(95): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(99): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(103): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(107): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(111): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(115): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(119): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(122): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(126): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(130): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(134): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(137): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(141): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(145): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(149): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(152): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(156): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(160): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(39): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(43): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(47): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(51): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(55): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(59): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(63): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(67): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(71): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(75): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(79): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(83): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(87): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(91): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(95): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(99): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(103): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(107): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(111): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(115): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(119): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(122): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(126): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(130): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(134): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(137): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(141): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(145): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(149): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(152): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(156): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(160): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(39): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(43): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(47): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(51): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(55): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(59): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(63): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(67): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(71): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(75): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(79): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(83): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(87): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(91): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(95): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(99): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(103): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(107): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(111): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(115): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(119): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(122): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(126): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(130): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(134): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(137): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(141): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(145): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(149): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(152): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(156): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(160): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(39): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(43): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(47): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(51): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(55): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(59): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(63): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(67): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(71): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(75): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(79): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(83): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(87): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(91): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(95): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(99): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(103): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(107): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(111): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(115): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(119): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(122): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(126): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(130): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(134): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(137): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(141): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(145): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(149): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(152): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(156): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(160): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(39): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(43): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(47): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(51): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(55): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(59): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(63): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(67): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(71): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(75): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(79): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(83): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(87): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(91): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(95): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(99): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(103): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(107): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(111): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(115): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(119): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(122): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(126): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(130): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(134): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(137): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(141): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(145): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(149): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(152): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(156): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(160): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(39): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(43): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(47): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(51): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(55): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(59): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(63): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(67): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(71): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(75): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(79): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(83): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(87): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(91): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(95): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(99): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(103): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(107): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(111): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(115): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(119): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(122): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(126): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(130): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(134): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(137): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(141): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(145): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(149): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(152): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(156): near "<=": syntax error, unexpected <=, expecting IDENTIFIER or TYPE_IDENTIFIER
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(160): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# 
+# Top level modules:
+# 	mux
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# 
+# Top level modules:
+# 	mux
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/mux_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux_tb
+# 
+# Top level modules:
+# 	mux_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/mux_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux_tb
+# 
+# Top level modules:
+# 	mux_tb
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# 
+# Top level modules:
+# 	mux
+# Window cannot be closed because the modal window "Save changes?" is still open.
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(38): near ")": syntax error, unexpected ')'
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(168): near "end": syntax error, unexpected end
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(44): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(48): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(52): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(56): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(60): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(64): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(68): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(72): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(76): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(80): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(84): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(88): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(92): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(96): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(100): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(104): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(108): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(112): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(116): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(120): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(124): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(127): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(131): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(135): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(139): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(142): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(146): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(150): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(154): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(157): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(161): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(165): (vlog-2110) Illegal reference to net "Rdat".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(44): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(48): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(52): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(56): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(60): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(64): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(68): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(72): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(76): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(80): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(84): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(88): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(92): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(96): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(100): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(104): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(108): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(112): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(116): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(120): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(124): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(127): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(131): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(135): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(139): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(142): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(146): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(150): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(154): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(157): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(161): (vlog-2110) Illegal reference to net "Rdat".
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/source/mux.sv(165): (vlog-2110) Illegal reference to net "Rdat".
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# 
+# Top level modules:
+# 	mux
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/source/mux.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling module mux
+# 
+# Top level modules:
+# 	mux
+vlog -reportprogress 300 -work work /home/ecegrid/a/mg252/ece437/processors/testbench/register_file_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# ** Error: /home/ecegrid/a/mg252/ece437/processors/testbench/register_file_tb.sv(9): Cannot find `include file "register_file_if.vh" in directories:
+#     /package/eda/mg/modeltech_10.2b/modeltech/ovm-2.1.2/../verilog_src/ovm-2.1.2/src, /package/eda/mg/modeltech_10.2b/modeltech/uvm-1.1d/../verilog_src/uvm-1.1d/src
+# -- Compiling module register_file_tb
+# -- Compiling program test
