@@ -26,7 +26,8 @@ module memwb
 		   mwif.RegWrite_o <= 0;
 		   mwif.RegDst_o <= 0;
 		   mwif.halt_o <= 0;
-		   
+		   mwif.Rd_o <= 0;
+		   mwif.Rt_o <= 0;
 		end
 		
 		else begin
@@ -40,7 +41,8 @@ module memwb
 		   mwif.RegWrite_o <= mwif.RegWrite_i;
 		   mwif.RegDst_o <= mwif.RegDst_i;
 		   mwif.halt_o <= mwif.halt_i;
-		   
+		   mwif.Rd_o <= mwif.Rd_i;
+		   mwif.Rt_o <= mwif.Rt_i;
 		end
 	end
 

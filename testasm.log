@@ -148,3 +148,86 @@ Reading /mtitcl/vsim/pref.tcl
 -:040041000000270193
 -:040042000000133770
  :00000001FF
+processing file asmFiles/test.ldst1.asm (1 of 1)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.request_unit_if
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.request_unit
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Error: (vsim-3766) The modport 'mw' was not found in interface 'memwb_if'.
+#         Region: /system_tb/DUT/CPU/DP/memwb
+# ** Error: (vsim-3766) The modport 'em' was not found in interface 'exmem_if'.
+#         Region: /system_tb/DUT/CPU/DP/exmem
+# ** Error: (vsim-3766) The modport 'ie' was not found in interface 'idex_if'.
+#         Region: /system_tb/DUT/CPU/DP/idex
+# ** Error: (vsim-3766) The modport 'ii' was not found in interface 'ifid_if'.
+#         Region: /system_tb/DUT/CPU/DP/ifid
+# run -all 
+# Starting Processor.
+# Halted at 760 time and ran for         37 cycles.
+# Starting memory dump.
+# Finished memory dump.
+14 instructions
+--- memsim.hex	2015-02-11 12:18:08.530226291 -0500
++++ memcpu.hex	2015-02-11 12:18:08.516225901 -0500
+@@ -1,6 +1,4 @@
+-:04000000340100F0D7
+ :0400010034020100C4
+-:0400020034030200C1
+ :0400030034040300BE
+ :0400040034050400BB
+ :040005008C26000045
+@@ -15,7 +13,4 @@
+ :04003C000000733716
+ :04003D000000270197
+ :04003E000000133774
+-:040040000000733712
+-:040041000000270193
+-:040042000000133770
+ :00000001FF

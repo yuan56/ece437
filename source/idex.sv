@@ -30,6 +30,9 @@ module idex
 			ieif.RegWrite_o <= 0;
 			ieif.RegDst_o <= 0;
 		        ieif.halt_o <= 0;
+		   ieif.Rd_o <= 0;
+		   ieif.Rt_o <= 0;
+		   
 		end
 		
 		else begin
@@ -47,6 +50,8 @@ module idex
 			ieif.RegWrite_o <= ieif.RegWrite_i;
 			ieif.RegDst_o <= ieif.RegDst_i;
 		        ieif.halt_o <= ieif.halt_i;
+		   ieif.Rd_o <= ieif.Rd_i;
+		    ieif.Rt_o <= ieif.Rt_i;
 		end
 	end
 

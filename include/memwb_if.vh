@@ -25,10 +25,10 @@ interface memwb_if;
 
 	logic [1:0] MemtoReg_i, MemtoReg_o;
 				
-
+   regbits_t Rd_i, Rt_i, Rd_o, Rt_o;
 	modport mwif (
-		input 	npc_i, Jaddr_i, aluout_i, extout_i, MemtoReg_i, dload_i, RegDst_i, RegWrite_i, halt_i,
-		output 	npc_o, Jaddr_o, aluout_o, extout_o, MemtoReg_o, dload_o, RegDst_o, RegWrite_o, halt_o
+		input 	npc_i, Jaddr_i, aluout_i, extout_i, MemtoReg_i, dload_i, RegDst_i, RegWrite_i, halt_i,  Rd_i, Rt_i,
+		output 	npc_o, Jaddr_o, aluout_o, extout_o, MemtoReg_o, dload_o, RegDst_o, RegWrite_o, halt_o, Rd_o, Rt_o
 		);
 
 endinterface

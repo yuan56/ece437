@@ -31,7 +31,8 @@ module exmem
 		   emif.RegWrite_o <= 0;
 		   emif.RegDst_o <= 0;
 		   emif.halt_o <= 0;
-		   
+		   emif.Rd_o <= 0;
+		   emif.Rt_o <= 0;
 		end
 		
 		else begin
@@ -50,7 +51,8 @@ module exmem
 		   emif.RegWrite_o <= emif.RegWrite_i;
 		   emif.RegDst_o <= emif.RegDst_i;
 		   emif.halt_o <= emif.halt_i;
-		   
+		   emif.Rd_o <= emif.Rd_i;
+		   emif.Rt_o <= emif.Rt_i;
 		end
 	end
 

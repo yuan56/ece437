@@ -84,12 +84,19 @@ module datapath (
   assign eif.imm = iiif.iload_o[15:0];                        //imm
   assign eif.ExtSel = cuif.ExtSel;                          
 
-  //control unit inputs
-  assign cuif.op = opcode_t'(iiif.iload_o[31:26]);           //op
-  assign cuif.funct = funct_t'(iiif.iload_o[5:0]);          //funct
-  assign cuif.vflag = aif.vflag;
-  assign cuif.zflag = aif.zflag;
-
+   //control unit inputs
+   assign cuif.op = opcode_t'(iiif.iload_o[31:26]);           //op
+   assign cuif.funct = funct_t'(iiif.iload_o[5:0]);          //funct
+   assign cuif.vflag = aif.vflag;
+   assign cuif.zflag = aif.zflag;
+   // instruction use for convenience
+   i_t itype;
+   j_t jtype;
+   r_t rtype;
+   assign itype = i_t'(iiif.iload_o);
+   assign rtype = r_t'(iiif.iload_o);
+   assign jtype = j_t'(iiif.iload_o);
+   
   //idex inputs
   assign ieif.npc_i = iiif.npc_o;
   assign ieif.Jaddr_i = Jaddr;
@@ -105,6 +112,9 @@ module datapath (
   assign ieif.MemtoReg_i = cuif.MemtoReg;
   assign ieif.ALUSrc_i = cuif.ALUSrc;
   assign ieif.ALUop_i = cuif.ALUop;
+   assign ieif.Rd_i = rtype.rd;
+   assign ieif.Rt_i = rtype.rt;
+   
 
   //ALU inputs
   assign aif.portA = ieif.rdata1_o;
@@ -126,6 +136,8 @@ module datapath (
   assign emif.halt_i = ieif.halt_o;
   assign emif.MemtoReg_i = ieif.MemtoReg_o;
   assign emif.ALUSrc_i = ieif.ALUSrc_o;
+   assign emif.Rd_i = ieif.Rd_o;
+   assign emif.Rt_i = ieif.Rt_o;
 
   //request unit inputs
   assign quif.DWen = emif.DWen_o;
@@ -142,7 +154,8 @@ module datapath (
   assign mwif.RegDst_i = emif.RegDst_o;
   assign mwif.RegWrite_i = emif.RegWrite_o;
   assign mwif.MemtoReg_i = emif.MemtoReg_o;
-
+   assign mwif.Rd_i = emif.Rd_o;
+   assign mwif.Rt_i = emif.Rt_o;
   //datapath inputs
    assign dpif.halt = mwif.halt_o;
   assign dpif.imemREN = 1'b1;
@@ -174,19 +187,19 @@ module datapath (
 
     //RegDst mux
     if (mwif.RegDst_o == 2'b01) begin      //rd
-      RegDst_out = regbits_t'(iiif.iload_o[15:11]);
+      RegDst_out = mwif.Rd_o;
     end
 
     else if (mwif.RegDst_o == 2'b11) begin //JAR instruction
-      RegDst_out = regbits_t'({5'b11111});
+      RegDst_out = 31;
     end
 
     else if (mwif.RegDst_o == 2'b00) begin //rt
-      RegDst_out = regbits_t'(iiif.iload_o[20:16]);
+      RegDst_out = mwif.Rt_o;
     end
 
     else begin
-      RegDst_out = regbits_t'(iiif.iload_o[20:16]);
+      RegDst_out = 0;
     end
 
 

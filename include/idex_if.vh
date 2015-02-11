@@ -30,13 +30,15 @@ interface idex_if;
 				ALUSrc_i, ALUSrc_o;
 
 	aluop_t		ALUop_i, ALUop_o;
-				
+
+   regbits_t Rd_i, Rt_i, Rd_o, Rt_o;
+   
 				
 
 
 	modport ieif (
-		input 	npc_i, Jaddr_i, rdata1_i, rdata2_i, extout_i, MemtoReg_i, ALUSrc_i, Branch_i, DRen_i, DWen_i, ALUop_i, RegDst_i, RegWrite_i, halt_i,
-		output 	npc_o, Jaddr_o, rdata1_o, rdata2_o, extout_o, MemtoReg_o, ALUSrc_o, Branch_o, DRen_o, DWen_o, ALUop_o, RegDst_o, RegWrite_o, halt_o
+		input 	npc_i, Jaddr_i, rdata1_i, rdata2_i, extout_i, MemtoReg_i, ALUSrc_i, Branch_i, DRen_i, DWen_i, ALUop_i, RegDst_i, RegWrite_i, halt_i, Rd_i, Rt_i,
+		output 	npc_o, Jaddr_o, rdata1_o, rdata2_o, extout_o, MemtoReg_o, ALUSrc_o, Branch_o, DRen_o, DWen_o, ALUop_o, RegDst_o, RegWrite_o, halt_o, Rd_o, Rt_o
 		);
 
 endinterface
