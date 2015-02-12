@@ -19,10 +19,21 @@ module ifid
 			iiif.npc_o <= 0;
 			iiif.iload_o <= 0;
 		end
-		
 		else begin
-			iiif.npc_o <= iiif.npc_i;
-			iiif.iload_o <= iiif.iload_i;
+			if (iiif.flush) begin
+				iiif.npc_o <= 0;
+				iiif.iload_o <= 0;
+			end
+
+			else if (iiif.iien) begin
+				iiif.npc_o <= iiif.npc_i;
+				iiif.iload_o <= iiif.iload_i;
+			end
+
+			else begin
+				iiif.npc_o <= 0;
+				iiif.iload_o <= 0;
+			end
 		end
 	end
 

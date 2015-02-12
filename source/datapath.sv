@@ -5,7 +5,7 @@
 
 // data path interface
 `include "datapath_cache_if.vh"
-`include "request_unit_if.vh"
+//`include "request_unit_if.vh"
 `include "control_unit_if.vh"
 `include "program_counter_if.vh"
 `include "register_file_if.vh"
@@ -25,7 +25,7 @@ module datapath (
 );
   // import types
   import cpu_types_pkg::*;
-  request_unit_if quif();           //request unit interface
+  //request_unit_if quif();           //request unit interface
   extender_if eif();                //extender interface
   control_unit_if cuif();           //control unit interface
   program_counter_if pcif();        //program counter interface
@@ -36,7 +36,7 @@ module datapath (
   exmem_if emif();                  //EX / MEM interface
   memwb_if mwif();                  //MEM / WB interface
 
-  request_unit qu (CLK, nRST, quif);
+  //request_unit qu (CLK, nRST, quif);
   pc pc (pcif, CLK, nRST);
   control_unit cu (cuif, nRST);
   register_file rf (CLK, nRST, rfif);
@@ -64,15 +64,36 @@ module datapath (
   // pc init
   parameter PC_INIT = 0;
 
+   // instruction use for convenience
+   i_t itype;
+   j_t jtype;
+   r_t rtype;
+   assign itype = i_t'(iiif.iload_o);
+   assign rtype = r_t'(iiif.iload_o);
+   assign jtype = j_t'(iiif.iload_o);
+
+   
+  //Enable signal for latches
+  assign iiif.iien = (dpif.ihit && !dpif.dhit);
+  assign ieif.ieen = (dpif.ihit || dpif.dhit);
+  assign emif.emen = (dpif.ihit || dpif.dhit);
+  assign mwif.mwen = ((dpif.ihit || dpif.dhit) || (itype.opcode == HALT));
+
+
+
 
   //PC inputs
   assign pcif.PCnext = PCSrc_out;
-  assign pcif.PCen = quif.PCen;
+  //assign pcif.PCen = quif.PCen;
+  assign pcif.PCen = dpif.ihit && !dpif.dhit;
 
   //ifid inputs
   assign iiif.npc_i = npc;
   assign iiif.iload_i = dpif.imemload;
-
+  assign iiif.flush = dpif.dmemREN || dpif.dmemWEN;
+   
+ 
+ 
   //Reg File inputs
   assign rfif.rsel1 = regbits_t'(iiif.iload_o[25:21]);        //rs
   assign rfif.rsel2 = regbits_t'(iiif.iload_o[20:16]);        //rt
@@ -89,13 +110,8 @@ module datapath (
    assign cuif.funct = funct_t'(iiif.iload_o[5:0]);          //funct
    assign cuif.vflag = aif.vflag;
    assign cuif.zflag = aif.zflag;
-   // instruction use for convenience
-   i_t itype;
-   j_t jtype;
-   r_t rtype;
-   assign itype = i_t'(iiif.iload_o);
-   assign rtype = r_t'(iiif.iload_o);
-   assign jtype = j_t'(iiif.iload_o);
+
+
    
   //idex inputs
   assign ieif.npc_i = iiif.npc_o;
@@ -112,8 +128,9 @@ module datapath (
   assign ieif.MemtoReg_i = cuif.MemtoReg;
   assign ieif.ALUSrc_i = cuif.ALUSrc;
   assign ieif.ALUop_i = cuif.ALUop;
-   assign ieif.Rd_i = rtype.rd;
-   assign ieif.Rt_i = rtype.rt;
+  assign ieif.Rd_i = rtype.rd;
+  assign ieif.Rt_i = rtype.rt;   
+   
    
 
   //ALU inputs
@@ -136,14 +153,17 @@ module datapath (
   assign emif.halt_i = ieif.halt_o;
   assign emif.MemtoReg_i = ieif.MemtoReg_o;
   assign emif.ALUSrc_i = ieif.ALUSrc_o;
-   assign emif.Rd_i = ieif.Rd_o;
-   assign emif.Rt_i = ieif.Rt_o;
+  assign emif.Rd_i = ieif.Rd_o;
+  assign emif.Rt_i = ieif.Rt_o;
 
   //request unit inputs
-  assign quif.DWen = emif.DWen_o;
-  assign quif.DRen = emif.DRen_o;
-   assign quif.ihit = dpif.ihit;
-      assign quif.dhit = dpif.dhit;
+  //assign quif.DWen = emif.DWen_o;
+  //assign quif.DRen = emif.DRen_o;
+  //assign quif.ihit = dpif.ihit;
+  //assign quif.dhit = dpif.dhit;
+  
+
+
   //memifwb inputs
   assign mwif.npc_i = emif.npc_o;
   assign mwif.Jaddr_i = emif.Jaddr_o;
@@ -154,17 +174,19 @@ module datapath (
   assign mwif.RegDst_i = emif.RegDst_o;
   assign mwif.RegWrite_i = emif.RegWrite_o;
   assign mwif.MemtoReg_i = emif.MemtoReg_o;
-   assign mwif.Rd_i = emif.Rd_o;
-   assign mwif.Rt_i = emif.Rt_o;
+  assign mwif.Rd_i = emif.Rd_o;
+  assign mwif.Rt_i = emif.Rt_o;
+  
   //datapath inputs
-   assign dpif.halt = mwif.halt_o;
+  assign dpif.halt = mwif.halt_o;
   assign dpif.imemREN = 1'b1;
   assign dpif.imemaddr = pcif.PCcurr;
-  assign dpif.dmemREN = quif.dREN;
-  assign dpif.dmemWEN = quif.dWEN;
   assign dpif.dmemstore = emif.rdata2_o;
   assign dpif.dmemaddr = emif.aluout_o;
   
+
+  assign dpif.dmemREN = emif.DRen_o;
+  assign dpif.dmemWEN = emif.DWen_o;
 
   always_comb begin
     //PCSrc mux

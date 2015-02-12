@@ -38,6 +38,7 @@ interface control_unit_if;
 	//output to outside of datapath block
 	logic 			halt;
 
+
 	modport cu (
 		input 		op, funct, vflag, zflag,
 		output 		halt, IRen, DWen, DRen, Jump, Branch, ALUop, RegWrite, ExtSel, MemtoReg, ALUSrc, RegDst, PCSrc
