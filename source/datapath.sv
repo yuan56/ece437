@@ -90,7 +90,10 @@ module datapath (
   //ifid inputs
   assign iiif.npc_i = npc;
   assign iiif.iload_i = dpif.imemload;
-  assign iiif.flush = dpif.dmemREN || dpif.dmemWEN;
+  //assign iiif.flush = dpif.dmemREN;
+  assign iiif.flush = (dpif.imemload == 0);
+  //assign iiif.noop_i = (dpif.imemload == 0);
+   
    
  
  
@@ -129,7 +132,9 @@ module datapath (
   assign ieif.ALUSrc_i = cuif.ALUSrc;
   assign ieif.ALUop_i = cuif.ALUop;
   assign ieif.Rd_i = rtype.rd;
-  assign ieif.Rt_i = rtype.rt;   
+  assign ieif.Rt_i = rtype.rt;
+  //assign ieif.noop_i = iiif.noop_o;
+   
    
    
 

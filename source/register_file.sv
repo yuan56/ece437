@@ -18,7 +18,7 @@ module register_file
     assign rfif.rdat1 = Reg_Arr[rfif.rsel1];
     assign rfif.rdat2 = Reg_Arr[rfif.rsel2];
 
-    always_ff @(posedge CLK or negedge nRST) begin
+    always_ff @(CLK or negedge nRST) begin
         
         if (!nRST) begin
             Reg_Arr <= '{default:0};

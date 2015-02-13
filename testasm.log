@@ -1,4 +1,71 @@
-processing file asmFiles/test.ldst1.asm (1 of 1)
+processing file asmFiles/test.branchjump1.asm (1 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+11 instructions
+--- memsim.hex	2015-02-12 16:57:39.773742550 -0500
++++ memcpu.hex	2015-02-12 16:57:39.752741966 -0500
+@@ -13,6 +13,6 @@
+ :04000C00AC41000CF7
+ :04000D0017E3FFF9FD
+ :04000E00FFFFFFFFF2
+-:0400220000000018C2
+-:0400240000000030A8
++:040020000000BA5CC6
++:040021000000BA5CC5
+ :00000001FF
+processing file asmFiles/test.ldst1.asm (2 of 5)
 Reading /mtitcl/vsim/pref.tcl 
 
 # 10.2b
@@ -54,7 +121,7 @@ Reading /mtitcl/vsim/pref.tcl
 # Starting memory dump.
 # Finished memory dump.
 14 instructions
-processing file asmFiles/test.ldst2.asm (1 of 1)
+processing file asmFiles/test.ldst2.asm (3 of 5)
 Reading /mtitcl/vsim/pref.tcl 
 
 # 10.2b
@@ -110,14 +177,2759 @@ Reading /mtitcl/vsim/pref.tcl
 # Starting memory dump.
 # Finished memory dump.
 15 instructions
---- memsim.hex	2015-02-11 21:57:08.013863631 -0500
-+++ memcpu.hex	2015-02-11 21:57:07.970862425 -0500
+processing file asmFiles/test.loadstore.asm (4 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 840 time and ran for         41 cycles.
+# Starting memory dump.
+# Finished memory dump.
+12 instructions
+--- memsim.hex	2015-02-12 16:57:45.448900566 -0500
++++ memcpu.hex	2015-02-12 16:57:45.426899954 -0500
 @@ -13,7 +13,7 @@
- :040200000000733750
- :0402010000002701D1
- :0402020000001337AE
--:04020300FEEDBEEF5F
-+:040203000000BEEF4A
- :0403C000000073378F
- :0403C1000000270110
- :0403C20000001337ED
+ :040020000000733732
+ :0400210000002701B3
+ :040022000000133790
+-:04002300DEADBEEFA1
++:040023000000BEEF2C
+ :04003C000000733716
+ :04003D000000270197
+ :04003E000000133774
+processing file asmFiles/test.rtype.asm (5 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 1560 time and ran for         77 cycles.
+# Starting memory dump.
+# Finished memory dump.
+27 instructions
+--- memsim.hex	2015-02-12 16:57:47.370954084 -0500
++++ memcpu.hex	2015-02-12 16:57:47.264951132 -0500
+@@ -33,7 +33,6 @@
+ :04002500FFFFDA708F
+ :04002600000037F8A7
+ :04002700000021565E
+-:04002800000D269011
+-:04002900000006933A
+-:04003C00FFFF0806B4
++:04002800001A4D204D
++:040029000000D26998
+ :00000001FF
+processing file asmFiles/test.branchjump1.asm (1 of 5)
+Target Clock Frequency : 50 MHz
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Shell
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:58:34 2015
+Info: Command: quartus_sh -t system.tcl
+Info (23030): Evaluation of Tcl script system.tcl was successful
+Info: Quartus II 32-bit Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 132 megabytes
+    Info: Processing ended: Thu Feb 12 16:58:34 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:58:38 2015
+Info: Command: quartus_map system -c system
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Info (12021): Found 3 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/control_unit.sv
+    Info (12022): Found design unit 1: cpu_types_pkg (SystemVerilog)
+    Info (12023): Found entity 1: control_unit_if
+    Info (12023): Found entity 2: control_unit
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/exmem.sv
+    Info (12023): Found entity 1: exmem_if
+    Info (12023): Found entity 2: exmem
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/alu.sv
+    Info (12023): Found entity 1: alu_if
+    Info (12023): Found entity 2: alu
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/ifid.sv
+    Info (12023): Found entity 1: ifid_if
+    Info (12023): Found entity 2: ifid
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/idex.sv
+    Info (12023): Found entity 1: idex_if
+    Info (12023): Found entity 2: idex
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/register_file.sv
+    Info (12023): Found entity 1: register_file_if
+    Info (12023): Found entity 2: register_file
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/pc.sv
+    Info (12023): Found entity 1: program_counter_if
+    Info (12023): Found entity 2: pc
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/extender.sv
+    Info (12023): Found entity 1: extender_if
+    Info (12023): Found entity 2: extender
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/memwb.sv
+    Info (12023): Found entity 1: memwb_if
+    Info (12023): Found entity 2: memwb
+Info (12021): Found 3 design units, including 3 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/caches.sv
+    Info (12023): Found entity 1: datapath_cache_if
+    Info (12023): Found entity 2: cache_control_if
+    Info (12023): Found entity 3: caches
+Info (12021): Found 1 design units, including 1 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/datapath.sv
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 1 design units, including 1 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/memory_control.sv
+    Info (12023): Found entity 1: memory_control
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/ram.sv
+    Info (12023): Found entity 1: cpu_ram_if
+    Info (12023): Found entity 2: ram
+Info (12021): Found 1 design units, including 1 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/pipeline.sv
+    Info (12023): Found entity 1: pipeline
+Info (12021): Found 2 design units, including 2 entities, in source file /home/ecegrid/a/mg252/ece437/processors/source/system.sv
+    Info (12023): Found entity 1: system_if
+    Info (12023): Found entity 2: system
+Info (12127): Elaborating entity "system" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at system.sv(41): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "cpu_ram_if" for hierarchy "cpu_ram_if:prif"
+Warning (12158): Entity "cpu_ram_if" contains only dangling pins
+Info (12128): Elaborating entity "pipeline" for hierarchy "pipeline:CPU"
+Info (12128): Elaborating entity "datapath_cache_if" for hierarchy "pipeline:CPU|datapath_cache_if:dcif"
+Warning (12158): Entity "datapath_cache_if" contains only dangling pins
+Info (12128): Elaborating entity "cache_control_if" for hierarchy "pipeline:CPU|cache_control_if:ccif"
+Warning (12158): Entity "cache_control_if" contains only dangling pins
+Info (12128): Elaborating entity "datapath" for hierarchy "pipeline:CPU|datapath:DP"
+Warning (10036): Verilog HDL or VHDL warning at datapath.sv(69): object "jtype" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at datapath.sv(129): truncated value with size 2 to match size of target (1)
+Warning (10034): Output port "dpif.datomic" at datapath.sv(25) has no driver
+Info (12128): Elaborating entity "extender_if" for hierarchy "pipeline:CPU|datapath:DP|extender_if:eif"
+Warning (12158): Entity "extender_if" contains only dangling pins
+Info (12128): Elaborating entity "control_unit_if" for hierarchy "pipeline:CPU|datapath:DP|control_unit_if:cuif"
+Warning (12158): Entity "control_unit_if" contains only dangling pins
+Info (12128): Elaborating entity "program_counter_if" for hierarchy "pipeline:CPU|datapath:DP|program_counter_if:pcif"
+Warning (12158): Entity "program_counter_if" contains only dangling pins
+Info (12128): Elaborating entity "register_file_if" for hierarchy "pipeline:CPU|datapath:DP|register_file_if:rfif"
+Warning (12158): Entity "register_file_if" contains only dangling pins
+Info (12128): Elaborating entity "alu_if" for hierarchy "pipeline:CPU|datapath:DP|alu_if:aif"
+Warning (12158): Entity "alu_if" contains only dangling pins
+Info (12128): Elaborating entity "ifid_if" for hierarchy "pipeline:CPU|datapath:DP|ifid_if:iiif"
+Warning (12158): Entity "ifid_if" contains only dangling pins
+Info (12128): Elaborating entity "idex_if" for hierarchy "pipeline:CPU|datapath:DP|idex_if:ieif"
+Warning (12158): Entity "idex_if" contains only dangling pins
+Info (12128): Elaborating entity "exmem_if" for hierarchy "pipeline:CPU|datapath:DP|exmem_if:emif"
+Warning (12158): Entity "exmem_if" contains only dangling pins
+Info (12128): Elaborating entity "memwb_if" for hierarchy "pipeline:CPU|datapath:DP|memwb_if:mwif"
+Warning (12158): Entity "memwb_if" contains only dangling pins
+Info (12128): Elaborating entity "pc" for hierarchy "pipeline:CPU|datapath:DP|pc:pc"
+Info (12128): Elaborating entity "control_unit" for hierarchy "pipeline:CPU|datapath:DP|control_unit:cu"
+Info (12128): Elaborating entity "register_file" for hierarchy "pipeline:CPU|datapath:DP|register_file:rf"
+Error (10122): Verilog HDL Event Control error at register_file.sv(21): mixed single- and double-edge expressions are not supported File: /home/ecegrid/a/mg252/ece437/processors/source/register_file.sv Line: 21
+Warning (10235): Verilog HDL Always Construct warning at register_file.sv(29): variable "WEN" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at register_file.sv(29): variable "wsel" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at register_file.sv(30): variable "wdat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at register_file.sv(30): variable "wsel" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10041): Inferred latch for "Reg_Arr[0][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[0][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[1][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[2][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[3][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[4][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[5][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[6][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[7][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[8][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[9][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[10][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[11][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[12][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[13][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[14][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[15][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[16][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[17][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[18][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[19][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[20][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[21][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[22][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[23][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[24][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[25][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[26][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[27][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[28][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[29][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[30][31]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][0]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][1]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][2]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][3]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][4]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][5]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][6]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][7]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][8]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][9]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][10]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][11]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][12]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][13]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][14]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][15]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][16]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][17]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][18]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][19]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][20]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][21]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][22]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][23]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][24]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][25]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][26]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][27]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][28]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][29]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][30]" at register_file.sv(21)
+Info (10041): Inferred latch for "Reg_Arr[31][31]" at register_file.sv(21)
+Error (12152): Can't elaborate user hierarchy "pipeline:CPU|datapath:DP|register_file:rf" File: /home/ecegrid/a/mg252/ece437/processors/source/datapath.sv Line: 42
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 2 errors, 20 warnings
+    Error: Peak virtual memory: 339 megabytes
+    Error: Processing ended: Thu Feb 12 16:58:41 2015
+    Error: Elapsed time: 00:00:03
+    Error: Total CPU time (on all processors): 00:00:02
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+11 instructions
+--- memsim.hex	2015-02-12 16:58:43.126506482 -0500
++++ memcpu.hex	2015-02-12 16:58:43.103505842 -0500
+@@ -13,6 +13,6 @@
+ :04000C00AC41000CF7
+ :04000D0017E3FFF9FD
+ :04000E00FFFFFFFFF2
+-:0400220000000018C2
+-:0400240000000030A8
++:040020000000BA5CC6
++:040021000000BA5CC5
+ :00000001FF
+processing file asmFiles/test.ldst1.asm (2 of 5)
+Target Clock Frequency : 50 MHz
+
+Mapped does not contain updated meminit.hex file... FIXING THIS
+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit MIF/HEX Update
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:58:46 2015
+Info: Command: quartus_cdb --update_mif system --rev=system
+Error (39003): Run Analysis and Synthesis (quartus_map) with revision "system" for --rev option before running Compiler Database Interface (quartus_cdb)
+Error: Quartus II 32-bit MIF/HEX Update was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 286 megabytes
+    Error: Processing ended: Thu Feb 12 16:58:46 2015
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:00
+Info: *******************************************************************
+Info: Running Quartus II 32-bit EDA Netlist Writer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:58:48 2015
+Info: Command: quartus_eda system -c system
+Error (199001): Run Analysis and Synthesis with top-level entity name "system" before running EDA Netlist Writer
+Error: Quartus II 32-bit EDA Netlist Writer was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 278 megabytes
+    Error: Processing ended: Thu Feb 12 16:58:49 2015
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:00
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+14 instructions
+processing file asmFiles/test.ldst2.asm (3 of 5)
+Target Clock Frequency : 50 MHz
+
+Mapped does not contain updated meminit.hex file... FIXING THIS
+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit MIF/HEX Update
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:58:53 2015
+Info: Command: quartus_cdb --update_mif system --rev=system
+Error (39003): Run Analysis and Synthesis (quartus_map) with revision "system" for --rev option before running Compiler Database Interface (quartus_cdb)
+Error: Quartus II 32-bit MIF/HEX Update was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 286 megabytes
+    Error: Processing ended: Thu Feb 12 16:58:54 2015
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:00
+Info: *******************************************************************
+Info: Running Quartus II 32-bit EDA Netlist Writer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:58:56 2015
+Info: Command: quartus_eda system -c system
+Error (199001): Run Analysis and Synthesis with top-level entity name "system" before running EDA Netlist Writer
+Error: Quartus II 32-bit EDA Netlist Writer was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 278 megabytes
+    Error: Processing ended: Thu Feb 12 16:58:57 2015
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:00
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 960 time and ran for         47 cycles.
+# Starting memory dump.
+# Finished memory dump.
+15 instructions
+processing file asmFiles/test.loadstore.asm (4 of 5)
+Target Clock Frequency : 50 MHz
+
+Mapped does not contain updated meminit.hex file... FIXING THIS
+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit MIF/HEX Update
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:59:01 2015
+Info: Command: quartus_cdb --update_mif system --rev=system
+Error (39003): Run Analysis and Synthesis (quartus_map) with revision "system" for --rev option before running Compiler Database Interface (quartus_cdb)
+Error: Quartus II 32-bit MIF/HEX Update was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 286 megabytes
+    Error: Processing ended: Thu Feb 12 16:59:02 2015
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:00
+Info: *******************************************************************
+Info: Running Quartus II 32-bit EDA Netlist Writer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:59:04 2015
+Info: Command: quartus_eda system -c system
+Error (199001): Run Analysis and Synthesis with top-level entity name "system" before running EDA Netlist Writer
+Error: Quartus II 32-bit EDA Netlist Writer was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 278 megabytes
+    Error: Processing ended: Thu Feb 12 16:59:05 2015
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:00
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 840 time and ran for         41 cycles.
+# Starting memory dump.
+# Finished memory dump.
+12 instructions
+--- memsim.hex	2015-02-12 16:59:07.158175580 -0500
++++ memcpu.hex	2015-02-12 16:59:07.136174967 -0500
+@@ -13,7 +13,7 @@
+ :040020000000733732
+ :0400210000002701B3
+ :040022000000133790
+-:04002300DEADBEEFA1
++:040023000000BEEF2C
+ :04003C000000733716
+ :04003D000000270197
+ :04003E000000133774
+processing file asmFiles/test.rtype.asm (5 of 5)
+Target Clock Frequency : 50 MHz
+
+Mapped does not contain updated meminit.hex file... FIXING THIS
+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit MIF/HEX Update
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:59:10 2015
+Info: Command: quartus_cdb --update_mif system --rev=system
+Error (39003): Run Analysis and Synthesis (quartus_map) with revision "system" for --rev option before running Compiler Database Interface (quartus_cdb)
+Error: Quartus II 32-bit MIF/HEX Update was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 286 megabytes
+    Error: Processing ended: Thu Feb 12 16:59:10 2015
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:00
+Info: *******************************************************************
+Info: Running Quartus II 32-bit EDA Netlist Writer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Thu Feb 12 16:59:13 2015
+Info: Command: quartus_eda system -c system
+Error (199001): Run Analysis and Synthesis with top-level entity name "system" before running EDA Netlist Writer
+Error: Quartus II 32-bit EDA Netlist Writer was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 283 megabytes
+    Error: Processing ended: Thu Feb 12 16:59:13 2015
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:00
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 1560 time and ran for         77 cycles.
+# Starting memory dump.
+# Finished memory dump.
+27 instructions
+--- memsim.hex	2015-02-12 16:59:15.508408068 -0500
++++ memcpu.hex	2015-02-12 16:59:15.486407454 -0500
+@@ -33,7 +33,6 @@
+ :04002500FFFFDA708F
+ :04002600000037F8A7
+ :04002700000021565E
+-:04002800000D269011
+-:04002900000006933A
+-:04003C00FFFF0806B4
++:04002800001A4D204D
++:040029000000D26998
+ :00000001FF
+processing file asmFiles/test.branchjump1.asm (1 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+11 instructions
+--- memsim.hex	2015-02-13 07:32:48.326247334 -0500
++++ memcpu.hex	2015-02-13 07:32:48.307246812 -0500
+@@ -13,6 +13,6 @@
+ :04000C00AC41000CF7
+ :04000D0017E3FFF9FD
+ :04000E00FFFFFFFFF2
+-:0400220000000018C2
+-:0400240000000030A8
++:040020000000BA5CC6
++:040021000000BA5CC5
+ :00000001FF
+processing file asmFiles/test.ldst1.asm (2 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+14 instructions
+processing file asmFiles/test.ldst2.asm (3 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 960 time and ran for         47 cycles.
+# Starting memory dump.
+# Finished memory dump.
+15 instructions
+processing file asmFiles/test.loadstore.asm (4 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 840 time and ran for         41 cycles.
+# Starting memory dump.
+# Finished memory dump.
+12 instructions
+--- memsim.hex	2015-02-13 07:32:53.312384240 -0500
++++ memcpu.hex	2015-02-13 07:32:53.296383800 -0500
+@@ -13,7 +13,7 @@
+ :040020000000733732
+ :0400210000002701B3
+ :040022000000133790
+-:04002300DEADBEEFA1
++:040023000000BEEF2C
+ :04003C000000733716
+ :04003D000000270197
+ :04003E000000133774
+processing file asmFiles/test.rtype.asm (5 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 1560 time and ran for         77 cycles.
+# Starting memory dump.
+# Finished memory dump.
+27 instructions
+--- memsim.hex	2015-02-13 07:32:54.952429270 -0500
++++ memcpu.hex	2015-02-13 07:32:54.937428858 -0500
+@@ -33,7 +33,6 @@
+ :04002500FFFFDA708F
+ :04002600000037F8A7
+ :04002700000021565E
+-:04002800000D269011
+-:04002900000006933A
+-:04003C00FFFF0806B4
++:04002800001A4D204D
++:040029000000D26998
+ :00000001FF
+processing file asmFiles/test.branchjump1.asm (1 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+11 instructions
+--- memsim.hex	2015-02-13 08:23:32.131006073 -0500
++++ memcpu.hex	2015-02-13 08:23:32.114005602 -0500
+@@ -13,6 +13,6 @@
+ :04000C00AC41000CF7
+ :04000D0017E3FFF9FD
+ :04000E00FFFFFFFFF2
+-:0400220000000018C2
+-:0400240000000030A8
++:040020000000BA5CC6
++:040021000000BA5CC5
+ :00000001FF
+processing file asmFiles/test.ldst1.asm (2 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+14 instructions
+processing file asmFiles/test.ldst2.asm (3 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 960 time and ran for         47 cycles.
+# Starting memory dump.
+# Finished memory dump.
+15 instructions
+processing file asmFiles/test.loadstore.asm (4 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 840 time and ran for         41 cycles.
+# Starting memory dump.
+# Finished memory dump.
+12 instructions
+--- memsim.hex	2015-02-13 08:23:37.635158193 -0500
++++ memcpu.hex	2015-02-13 08:23:37.619157750 -0500
+@@ -13,7 +13,7 @@
+ :040020000000733732
+ :0400210000002701B3
+ :040022000000133790
+-:04002300DEADBEEFA1
++:040023000000BEEF2C
+ :04003C000000733716
+ :04003D000000270197
+ :04003E000000133774
+processing file asmFiles/test.rtype.asm (5 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 1560 time and ran for         77 cycles.
+# Starting memory dump.
+# Finished memory dump.
+27 instructions
+--- memsim.hex	2015-02-13 08:23:39.288203880 -0500
++++ memcpu.hex	2015-02-13 08:23:39.271203410 -0500
+@@ -33,7 +33,6 @@
+ :04002500FFFFDA708F
+ :04002600000037F8A7
+ :04002700000021565E
+-:04002800000D269011
+-:04002900000006933A
+-:04003C00FFFF0806B4
++:04002800001A4D204D
++:040029000000D26998
+ :00000001FF
+processing file asmFiles/test.branchjump1.asm (1 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+11 instructions
+--- memsim.hex	2015-02-13 08:25:23.537084934 -0500
++++ memcpu.hex	2015-02-13 08:25:23.520084465 -0500
+@@ -13,6 +13,6 @@
+ :04000C00AC41000CF7
+ :04000D0017E3FFF9FD
+ :04000E00FFFFFFFFF2
+-:0400220000000018C2
+-:0400240000000030A8
++:040020000000BA5CC6
++:040021000000BA5CC5
+ :00000001FF
+processing file asmFiles/test.ldst1.asm (2 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 920 time and ran for         45 cycles.
+# Starting memory dump.
+# Finished memory dump.
+14 instructions
+processing file asmFiles/test.ldst2.asm (3 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 960 time and ran for         47 cycles.
+# Starting memory dump.
+# Finished memory dump.
+15 instructions
+processing file asmFiles/test.loadstore.asm (4 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 840 time and ran for         41 cycles.
+# Starting memory dump.
+# Finished memory dump.
+12 instructions
+--- memsim.hex	2015-02-13 08:25:28.567223943 -0500
++++ memcpu.hex	2015-02-13 08:25:28.548223418 -0500
+@@ -13,7 +13,7 @@
+ :040020000000733732
+ :0400210000002701B3
+ :040022000000133790
+-:04002300DEADBEEFA1
++:040023000000BEEF2C
+ :04003C000000733716
+ :04003D000000270197
+ :04003E000000133774
+processing file asmFiles/test.rtype.asm (5 of 5)
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf system_tb.wlf work.system_tb 
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.extender_if
+# Loading work.control_unit_if
+# Loading work.program_counter_if
+# Loading work.register_file_if
+# Loading work.alu_if
+# Loading work.ifid_if
+# Loading work.idex_if
+# Loading work.exmem_if
+# Loading work.memwb_if
+# Loading work.pc
+# Loading work.control_unit
+# Loading work.register_file
+# Loading work.alu
+# Loading work.extender
+# Loading work.ifid
+# Loading work.idex
+# Loading work.exmem
+# Loading work.memwb
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all 
+# Starting Processor.
+# Halted at 1560 time and ran for         77 cycles.
+# Starting memory dump.
+# Finished memory dump.
+27 instructions
+--- memsim.hex	2015-02-13 08:25:30.567279214 -0500
++++ memcpu.hex	2015-02-13 08:25:30.551278771 -0500
+@@ -33,7 +33,6 @@
+ :04002500FFFFDA708F
+ :04002600000037F8A7
+ :04002700000021565E
+-:04002800000D269011
+-:04002900000006933A
+-:04003C00FFFF0806B4
++:04002800001A4D204D
++:040029000000D26998
+ :00000001FF
