@@ -3,11 +3,11 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate /system_tb/CLK
 add wave -noupdate /system_tb/nRST
 add wave -noupdate /system_tb/syif/halt
-add wave -noupdate -group pc /system_tb/DUT/CPU/DP/PCSrc_out
-add wave -noupdate -group pc /system_tb/DUT/CPU/DP/npc
-add wave -noupdate -group pc /system_tb/DUT/CPU/DP/pc/pcif/PCen
-add wave -noupdate -group pc /system_tb/DUT/CPU/DP/pc/pcif/PCnext
-add wave -noupdate -group pc /system_tb/DUT/CPU/DP/pc/pcif/PCcurr
+add wave -noupdate -expand -group pc /system_tb/DUT/CPU/DP/pout
+add wave -noupdate -expand -group pc /system_tb/DUT/CPU/DP/npc
+add wave -noupdate -expand -group pc /system_tb/DUT/CPU/DP/pc/pcif/PCen
+add wave -noupdate -expand -group pc /system_tb/DUT/CPU/DP/pc/pcif/PCnext
+add wave -noupdate -expand -group pc /system_tb/DUT/CPU/DP/pc/pcif/PCcurr
 add wave -noupdate -group ram /system_tb/DUT/prif/ramREN
 add wave -noupdate -group ram /system_tb/DUT/prif/ramWEN
 add wave -noupdate -group ram /system_tb/DUT/prif/ramaddr
@@ -77,6 +77,11 @@ add wave -noupdate -group alu /system_tb/DUT/CPU/DP/aif/portB
 add wave -noupdate -group alu /system_tb/DUT/CPU/DP/aif/outport
 add wave -noupdate -group alu /system_tb/DUT/CPU/DP/aif/aluop
 add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/dpif/halt
+add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/itype.opcode
+add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/jtype.addr
+add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/JumpAddr
+add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/cuif/Jump
+add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/branchdecide
 add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/dpif/ihit
 add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/dpif/imemREN
 add wave -noupdate -group datapath /system_tb/DUT/CPU/DP/dpif/imemload
@@ -102,13 +107,16 @@ add wave -noupdate -group ifid /system_tb/DUT/CPU/DP/iiif/iload_i
 add wave -noupdate -group ifid /system_tb/DUT/CPU/DP/iiif/iload_o
 add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/opcode_i
 add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/opcode_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/bnpc_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/bnpc_o
 add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/flush
-add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rd_i
-add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rt_i
-add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rd_o
-add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rt_o
+add wave -noupdate -expand -group idex -expand /system_tb/DUT/CPU/DP/rtype
 add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rs_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rt_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rd_i
 add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rs_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rt_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rd_o
 add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/npc_i
 add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Jaddr_i
 add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Jaddr_o
@@ -200,8 +208,8 @@ add wave -noupdate -group eif /system_tb/DUT/CPU/DP/eif/ExtSel
 add wave -noupdate -group eif /system_tb/DUT/CPU/DP/eif/imm
 add wave -noupdate -group eif /system_tb/DUT/CPU/DP/eif/extout
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {546660 ps} 0}
-quietly wave cursor active 1
+WaveRestoreCursors {{Cursor 1} {501690 ps} 0} {{Cursor 2} {336599 ps} 0}
+quietly wave cursor active 2
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -216,4 +224,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {168095 ps} {840487 ps}
+WaveRestoreZoom {151281 ps} {487477 ps}

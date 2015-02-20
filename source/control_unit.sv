@@ -22,7 +22,7 @@ module control_unit (
 	   cuif.IRen = 1'b1;
 	   cuif.DWen = 1'b0;
 	   cuif.DRen = 1'b0;
-	   cuif.Jump = 1'bz;
+	   cuif.Jump = 1'b0;
 	   cuif.Branch = 1'b0;
 	   cuif.ALUop = ALU_SLTU;
 	   cuif.RegWrite = 1'b1;
@@ -37,7 +37,7 @@ module control_unit (
 		SLL: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_SLL;
 		   cuif.RegWrite = 1'b1;
@@ -52,7 +52,7 @@ module control_unit (
 		SRL: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_SRL;
 		   cuif.RegWrite = 1'b1;
@@ -67,7 +67,7 @@ module control_unit (
 		JR: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'b0;
+		   cuif.Jump = 1'b1;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_AND;
 		   cuif.RegWrite = 1'b0;
@@ -82,7 +82,7 @@ module control_unit (
 		ADD: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_ADD;
 		   cuif.RegWrite = 1'b1;
@@ -97,7 +97,7 @@ module control_unit (
 		ADDU: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_ADD;
 		   cuif.RegWrite = 1'b1;
@@ -112,7 +112,7 @@ module control_unit (
 		SUB: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_SUB;
 		   cuif.RegWrite = 1'b1;
@@ -127,7 +127,7 @@ module control_unit (
 		SUBU: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_SUB;
 		   cuif.RegWrite = 1'b1;
@@ -142,7 +142,7 @@ module control_unit (
 		AND: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_AND;
 		   cuif.RegWrite = 1'b1;
@@ -157,7 +157,7 @@ module control_unit (
 		OR: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_OR;
 		   cuif.RegWrite = 1'b1;
@@ -172,7 +172,7 @@ module control_unit (
 		XOR: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_XOR;
 		   cuif.RegWrite = 1'b1;
@@ -187,7 +187,7 @@ module control_unit (
 		NOR: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_NOR;
 		   cuif.RegWrite = 1'b1;
@@ -202,7 +202,7 @@ module control_unit (
 		SLT: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_SLT;
 		   cuif.RegWrite = 1'b1;
@@ -217,7 +217,7 @@ module control_unit (
 		SLTU: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_SLTU;
 		   cuif.RegWrite = 1'b1;
@@ -271,8 +271,8 @@ module control_unit (
 		BEQ: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
-		   cuif.Branch = cuif.zflag;
+		   cuif.Jump = 1'b0;
+		   cuif.Branch = 1;
 		   cuif.ALUop = ALU_SUB;
 		   cuif.RegWrite = 1'b0;
 		   cuif.ExtSel = 2'b00;
@@ -286,8 +286,8 @@ module control_unit (
 		BNE: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
-		   cuif.Branch = !cuif.zflag;
+		   cuif.Jump = 1'b0;
+		   cuif.Branch = 1;
 		   cuif.ALUop = ALU_SUB;
 		   cuif.RegWrite = 1'b0;
 		   cuif.ExtSel = 2'b00;
@@ -301,7 +301,7 @@ module control_unit (
 		ADDI: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_ADD;
 		   cuif.RegWrite = 1'b1;
@@ -316,7 +316,7 @@ module control_unit (
 		ADDIU: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_ADD;
 		   cuif.RegWrite = 1'b1;
@@ -331,7 +331,7 @@ module control_unit (
 		SLTI: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_SLT;
 		   cuif.RegWrite = 1'b1;
@@ -346,7 +346,7 @@ module control_unit (
 		SLTIU: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_SLTU;
 		   cuif.RegWrite = 1'b1;
@@ -361,7 +361,7 @@ module control_unit (
 		ANDI: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_AND;
 		   cuif.RegWrite = 1'b1;
@@ -376,7 +376,7 @@ module control_unit (
 		ORI: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_OR;
 		   cuif.RegWrite = 1'b1;
@@ -391,7 +391,7 @@ module control_unit (
 		XORI: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_XOR;
 		   cuif.RegWrite = 1'b1;
@@ -406,7 +406,7 @@ module control_unit (
 		LUI: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_AND;
 		   cuif.RegWrite = 1'b1;
@@ -421,7 +421,7 @@ module control_unit (
 		LW: begin
 		   cuif.DWen = 1'b0;
 		   cuif.DRen = 1'b1;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_ADD;
 		   cuif.RegWrite = 1'b1;
@@ -436,7 +436,7 @@ module control_unit (
 		SW: begin
 		   cuif.DWen = 1'b1;
 		   cuif.DRen = 1'b0;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'b0;
 		   cuif.ALUop = ALU_ADD;
 		   cuif.RegWrite = 1'b0;
@@ -448,19 +448,19 @@ module control_unit (
 		   cuif.PCSrc = 1'b0;
 		end
 
-		HALT: begin
+		HALT: begin/*
 		   cuif.DWen = 1'bz;
 		   cuif.DRen = 1'bz;
-		   cuif.Jump = 1'bz;
+		   cuif.Jump = 1'b0;
 		   cuif.Branch = 1'bz;
 		   cuif.ALUop = ALU_AND;
 		   cuif.RegWrite = 1'bz;
 		   cuif.ExtSel = 2'bzz;
 		   cuif.MemtoReg = 2'bzz;
 		   cuif.ALUSrc = 2'bzz;
-		   cuif.RegDst = 2'b01;
+		   cuif.RegDst = 2'b01;*/
 		   cuif.halt = 1'b1; 
-		   cuif.PCSrc = 1'b0;
+		   // cuif.PCSrc = 1'b0;
 		end
 		default: begin
 		   cuif.halt = 1'b0;

@@ -22,15 +22,14 @@ interface exmem_if;
 
 
 	logic 		Branch_i, Branch_o,
-				DRen_i, DRen_o,
-				DWen_i, DWen_o,
-				RegWrite_i, RegWrite_o,
-				RegDst_i, RegDst_o,
-				halt_i, halt_o,
-				emen, noop_i; 
+			DRen_i, DRen_o,
+			DWen_i, DWen_o,
+			RegWrite_i, RegWrite_o,
+			halt_i, halt_o,
+			emen, noop_i; 
 
 	logic [1:0] MemtoReg_i, MemtoReg_o,
-				ALUSrc_i, ALUSrc_o;
+		    ALUSrc_i, ALUSrc_o, RegDst_i, RegDst_o;
     regbits_t Rd_i, Rt_i, Rd_o, Rt_o;
 
     // for debuging

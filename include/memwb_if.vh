@@ -20,11 +20,11 @@ interface memwb_if;
 				extout_i, extout_o;
 
 	logic 		halt_i, halt_o,
-				RegDst_i, RegDst_o,
+				
 				RegWrite_i, RegWrite_o,
 				mwen; 
 
-	logic [1:0] MemtoReg_i, MemtoReg_o;
+	logic [1:0] MemtoReg_i, MemtoReg_o,RegDst_i, RegDst_o;
 				
    	regbits_t Rd_i, Rt_i, Rd_o, Rt_o;
 

@@ -35,6 +35,8 @@ module idex
 		   ieif.Rs_o <= 0;
 		   ieif.opcode_o <= RTYPE;
 		   ieif.shamt_o <= 0;
+		   ieif.bnpc_o <= 0;
+		   ieif.Jump_o <= 0;
 		   
 		end
 	   	else begin
@@ -58,7 +60,8 @@ module idex
 		      ieif.Rs_o <= ieif.Rs_i;
 		      ieif.opcode_o <= ieif.opcode_i;
 		       ieif.shamt_o <= ieif.shamt_i;
-		      
+		      ieif.bnpc_o <= ieif.bnpc_i;
+		      ieif.Jump_o <= ieif.Jump_i;
 		   end
 		   /*
 		   else if(ieif.noop_i)begin
@@ -100,6 +103,8 @@ module idex
 		      ieif.Rs_o <= 0;
 		      ieif.opcode_o <= RTYPE ;
 		       ieif.shamt_o <= 0;
+		      ieif.bnpc_o <= 0;
+		      ieif.Jump_o <= 0;
 		   end
 		end
 	end
