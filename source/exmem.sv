@@ -33,6 +33,7 @@ module exmem
 		   emif.halt_o <= 0;
 		   emif.Rd_o <= 0;
 		   emif.Rt_o <= 0;
+		   emif.opcode_o <= RTYPE;
 		end
 		
 		else begin
@@ -54,25 +55,27 @@ module exmem
 			    emif.halt_o <= emif.halt_i;
 			    emif.Rd_o <= emif.Rd_i;
 			    emif.Rt_o <= emif.Rt_i;
+			   emif.opcode_o <= emif.opcode_i;
 			end
 			else begin
-				emif.npc_o <= 0;
-			   	emif.bnpc_o <= 0;
-			   	emif.Jaddr_o <= 0;
-			   	emif.rdata2_o <= 0;
-			   	emif.aluout_o <= 0;
-			   	emif.extout_o <= 0;
-			   	emif.MemtoReg_o <= 0;
-			   	emif.ALUSrc_o <= 0;
-			   	emif.Branch_o <= 0;
-			   	emif.DRen_o <= 0;
-			   	emif.DWen_o <= 0;
-			   	emif.ALUSrc_o <= 0;
-			   	emif.RegWrite_o <= 0;
-			   	emif.RegDst_o <= 0;
-			   	emif.halt_o <= 0;
-			   	emif.Rd_o <= 0;
-			   	emif.Rt_o <= 0;
+			   emif.npc_o <= 0;
+			   emif.bnpc_o <= 0;
+			   emif.Jaddr_o <= 0;
+			   emif.rdata2_o <= 0;
+			   emif.aluout_o <= 0;
+			   emif.extout_o <= 0;
+			   emif.MemtoReg_o <= 0;
+			   emif.ALUSrc_o <= 0;
+			   emif.Branch_o <= 0;
+			   emif.DRen_o <= 0;
+			   emif.DWen_o <= 0;
+			   emif.ALUSrc_o <= 0;
+			   emif.RegWrite_o <= 0;
+			   emif.RegDst_o <= 0;
+			   emif.halt_o <= 0;
+			   emif.Rd_o <= 0;
+			   emif.Rt_o <= 0;
+			   emif.opcode_o <= RTYPE;
 			end
 		end
 	end

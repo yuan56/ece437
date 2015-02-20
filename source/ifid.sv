@@ -28,17 +28,23 @@ module ifid
 			   //iiif.noop_o <= 0;
 			end
 		   
-			else if (iiif.iien) begin
-			   iiif.npc_o <= iiif.npc_i;
-			   iiif.iload_o <= iiif.iload_i;
-			   //iiif.noop_o <= iiif.noop_i;
+			else  begin
+			   if(iiif.iien) begin
+			      iiif.npc_o <= iiif.npc_i;
+			      iiif.iload_o <= iiif.iload_i;
+			      //iiif.noop_o <= iiif.noop_i;
+			   end
+			   else begin
+			      iiif.npc_o <= iiif.npc_o;
+			      iiif.iload_o <= iiif.iload_o;
+			   end
 			end
-
+		   /*
 			else begin
 			   iiif.npc_o <= 0;
 			   iiif.iload_o <= 0;
 			   //iiif.noop_o <= 0;
-			end
+			end */
 		end
 	end
 

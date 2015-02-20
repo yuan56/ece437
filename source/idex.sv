@@ -32,9 +32,13 @@ module idex
 		   ieif.halt_o <= 0;
 		   ieif.Rd_o <= 0;
 		   ieif.Rt_o <= 0;
+		   ieif.Rs_o <= 0;
+		   ieif.opcode_o <= RTYPE;
+		   ieif.shamt_o <= 0;
+		   
 		end
 	   	else begin
-		   if (ieif.ieen) begin
+		   if (!ieif.flush) begin
 			 ieif.npc_o <= ieif.npc_i;
 			 ieif.Jaddr_o <= ieif.Jaddr_i;
 			 ieif.rdata1_o <= ieif.rdata1_i;
@@ -51,6 +55,10 @@ module idex
 			 ieif.halt_o <= ieif.halt_i;
 			 ieif.Rd_o <= ieif.Rd_i;
 			 ieif.Rt_o <= ieif.Rt_i;
+		      ieif.Rs_o <= ieif.Rs_i;
+		      ieif.opcode_o <= ieif.opcode_i;
+		       ieif.shamt_o <= ieif.shamt_i;
+		      
 		   end
 		   /*
 		   else if(ieif.noop_i)begin
@@ -89,6 +97,9 @@ module idex
 		      ieif.halt_o <= 0;
 		      ieif.Rd_o <= 0;
 		      ieif.Rt_o <= 0;
+		      ieif.Rs_o <= 0;
+		      ieif.opcode_o <= RTYPE ;
+		       ieif.shamt_o <= 0;
 		   end
 		end
 	end

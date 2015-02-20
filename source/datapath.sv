@@ -25,12 +25,12 @@ module datapath (
 );
   // import types
   import cpu_types_pkg::*;
-  //request_unit_if quif();           //request unit interface
   extender_if eif();                //extender interface
   control_unit_if cuif();           //control unit interface
   program_counter_if pcif();        //program counter interface
   register_file_if rfif();          //register file interface
   alu_if aif();                     //alu interface
+  hazard_unit_if huif();            //hazard unit interface
   ifid_if iiif();                   //IF / ID interface
   idex_if ieif();                   //ID / EX interface
   exmem_if emif();                  //EX / MEM interface
@@ -42,10 +42,12 @@ module datapath (
   register_file rf (CLK, nRST, rfif);
   alu alu (aif);
   extender ext (eif);
+  hazard_unit hu (huif);
   ifid ifid(CLK, nRST, iiif);
   idex idex(CLK, nRST, ieif);
   exmem exmem (CLK, nRST, emif);
   memwb memwb (CLK, nRST, mwif);  
+
 
   //mux outputs
   word_t      PCSrc_out;             //PCSrc mux output
@@ -72,34 +74,54 @@ module datapath (
    assign rtype = r_t'(iiif.iload_o);
    assign jtype = j_t'(iiif.iload_o);
 
-   
+
+  // mux signals for forwarding unit
+  logic      memfwA, wbfwA, memfwB, wbfwB;
+      
   //Enable signal for latches
-  assign iiif.iien = (dpif.ihit && !dpif.dhit);
-  assign ieif.ieen = (dpif.ihit || dpif.dhit);
-  assign emif.emen = (dpif.ihit || dpif.dhit);
-  assign mwif.mwen = ((dpif.ihit || dpif.dhit) || (itype.opcode == HALT));
+  //assign iiif.iien = huif.iien;
+  //assign ieif.ieen = huif.ieen;
+   assign emif.emen = 1; // huif.emen;
+   assign mwif.mwen = 1; // huif.mwen;
 
-
+   // Hazard detection wire
+   logic     hazard;
+   
+   // Input to hazard unit
+   /*always_comb begin
+      huif.hazard = hazard;
+    huif.ihit = dpif.ihit;
+      huif.dhit = dpif.dhit;
+      huif.iload
+      
+   end*/
+   
 
 
   //PC inputs
   assign pcif.PCnext = PCSrc_out;
-  //assign pcif.PCen = quif.PCen;
-  assign pcif.PCen = dpif.ihit && !dpif.dhit;
+  assign pcif.PCen = (dpif.ihit && !dpif.dhit) && ~hazard; // freezes when stalling (hazards)
 
   //ifid inputs
   assign iiif.npc_i = npc;
-  assign iiif.iload_i = dpif.imemload;
-  //assign iiif.flush = dpif.dmemREN;
-  assign iiif.flush = (dpif.imemload == 0);
-  //assign iiif.noop_i = (dpif.imemload == 0);
+  //assign iiif.iload_i = dpif.imemload;
+   assign iiif.iload_i = dpif.dhit ? 0: dpif.imemload;
+   
+   assign iiif.flush = 0; // huif.flush;
+   assign iiif.iien = (huif.ihit && !huif.dhit) || !hazard; // freezes the ifid latch when hazard occur
+   
+   
    
    
  
  
   //Reg File inputs
-  assign rfif.rsel1 = regbits_t'(iiif.iload_o[25:21]);        //rs
-  assign rfif.rsel2 = regbits_t'(iiif.iload_o[20:16]);        //rt
+   assign rfif.rsel1 = regbits_t'(iiif.iload_o[25:21]); // mux included for forwarding// regbits_t'(iiif.iload_o[25:21]);
+   
+  
+   assign rfif.rsel2 = regbits_t'(iiif.iload_o[20:16]);  //rt // regbits_t'(iiif.iload_o[20:16]);
+   
+  
   assign rfif.wsel = RegDst_out;
   assign rfif.wdat = MtR_out;
   assign rfif.WEN = mwif.RegWrite_o;
@@ -108,13 +130,13 @@ module datapath (
   assign eif.imm = iiif.iload_o[15:0];                        //imm
   assign eif.ExtSel = cuif.ExtSel;                          
 
-   //control unit inputs
-   assign cuif.op = opcode_t'(iiif.iload_o[31:26]);           //op
-   assign cuif.funct = funct_t'(iiif.iload_o[5:0]);          //funct
-   assign cuif.vflag = aif.vflag;
-   assign cuif.zflag = aif.zflag;
+  //control unit inputs
+  assign cuif.op = opcode_t'(iiif.iload_o[31:26]);           //op
+  assign cuif.funct = funct_t'(iiif.iload_o[5:0]);          //funct
+  assign cuif.vflag = aif.vflag;
+  assign cuif.zflag = aif.zflag;
 
-
+   
    
   //idex inputs
   assign ieif.npc_i = iiif.npc_o;
@@ -133,14 +155,34 @@ module datapath (
   assign ieif.ALUop_i = cuif.ALUop;
   assign ieif.Rd_i = rtype.rd;
   assign ieif.Rt_i = rtype.rt;
-  //assign ieif.noop_i = iiif.noop_o;
+  assign ieif.Rs_i = rtype.rs;
+   assign ieif.flush =  (iiif.iload_o == 0) || hazard;
+   assign ieif.opcode_i = itype.opcode;
+   assign ieif.shamt_i = rtype.shamt;
+ 
    
+   
+  // Forwarding unit muxes  
+  always_comb begin
+      memfwA = ( (emif.Rd_o == ieif.Rs_o) && (ieif.ALUSrc_o != 1) ) && (emif.Rd_o != 0);
+      memfwB = (emif.Rd_o == ieif.Rt_o) && (emif.Rd_o != 0);
+      wbfwA =  ( ( (mwif.Rd_o == ieif.Rs_o) && (ieif.ALUSrc_o != 1) ) || ( (mwif.Rt_o == ieif.Rs_o) && (ieif.ALUSrc_o == 1) ) )  && (mwif.Rd_o != 0);
+      wbfwB =  (mwif.Rd_o == ieif.Rt_o) && (mwif.Rd_o != 0);
+   end
+      
+   // Hazard unit for stalling
+   always_comb begin
+      hazard = ieif.RegWrite_o && (ieif.Rt_o == rtype.rs || ieif.Rt_o == rtype.rt) && (ieif.Rt_o != 0);
+      // if hazard is 1, insert nops at IDEX latch, and freeze PC and IFID latch.
+   end
+      
+      
    
    
 
   //ALU inputs
-  assign aif.portA = ieif.rdata1_o;
-  assign aif.portB = ALUSrc_out;
+  assign aif.portA = (memfwA) ? emif.aluout_o : ( (wbfwA) ?  MtR_out : ieif.rdata1_o);
+  assign aif.portB = (memfwB) ? emif.aluout_o : ( (wbfwB) ?  MtR_out : ALUSrc_out);
   assign aif.aluop = ieif.ALUop_o;
 
   //exmemif inputs
@@ -160,14 +202,10 @@ module datapath (
   assign emif.ALUSrc_i = ieif.ALUSrc_o;
   assign emif.Rd_i = ieif.Rd_o;
   assign emif.Rt_i = ieif.Rt_o;
+   assign emif.opcode_i = ieif.opcode_o;
+   
 
-  //request unit inputs
-  //assign quif.DWen = emif.DWen_o;
-  //assign quif.DRen = emif.DRen_o;
-  //assign quif.ihit = dpif.ihit;
-  //assign quif.dhit = dpif.dhit;
   
-
 
   //memifwb inputs
   assign mwif.npc_i = emif.npc_o;
@@ -181,6 +219,8 @@ module datapath (
   assign mwif.MemtoReg_i = emif.MemtoReg_o;
   assign mwif.Rd_i = emif.Rd_o;
   assign mwif.Rt_i = emif.Rt_o;
+   assign mwif.opcode_i = emif.opcode_o;
+   
   
   //datapath inputs
   assign dpif.halt = mwif.halt_o;
@@ -254,7 +294,7 @@ module datapath (
     end
 
     else if (ieif.ALUSrc_o == 2'b10) begin //LUI instruction
-      ALUSrc_out = word_t'({27'b0, iiif.iload_o[10:6]});
+      ALUSrc_out = word_t'({27'b0, ieif.shamt_o});
     end
 
     else begin
