@@ -26,7 +26,7 @@ interface exmem_if;
 			DWen_i, DWen_o,
 			RegWrite_i, RegWrite_o,
 			halt_i, halt_o,
-			emen, noop_i; 
+			emen, noop_i, Jump_i, Jump_o; 
 
 	logic [1:0] MemtoReg_i, MemtoReg_o,
 		    ALUSrc_i, ALUSrc_o, RegDst_i, RegDst_o;
@@ -36,8 +36,8 @@ interface exmem_if;
    opcode_t opcode_i, opcode_o;
    
 	modport em (
-		input  npc_i, bnpc_i, Jaddr_i, rdata2_i, aluout_i, extout_i, MemtoReg_i, ALUSrc_i, Branch_i, DRen_i, DWen_i, RegDst_i, RegWrite_i, halt_i, Rd_i, Rt_i, emen, noop_i, opcode_i, 
-		output npc_o, bnpc_o, Jaddr_o, rdata2_o, aluout_o, extout_o, MemtoReg_o, ALUSrc_o, Branch_o, DRen_o, DWen_o, RegDst_o, RegWrite_o, halt_o, Rd_o, Rt_o, opcode_o
+		input  npc_i, bnpc_i, Jaddr_i, rdata2_i, aluout_i, extout_i, MemtoReg_i, ALUSrc_i, Branch_i, DRen_i, DWen_i, RegDst_i, RegWrite_i, halt_i, Rd_i, Rt_i, emen, noop_i, opcode_i, Jump_i, 
+		output npc_o, bnpc_o, Jaddr_o, rdata2_o, aluout_o, extout_o, MemtoReg_o, ALUSrc_o, Branch_o, DRen_o, DWen_o, RegDst_o, RegWrite_o, halt_o, Rd_o, Rt_o, opcode_o, Jump_o
 		);
 
 endinterface

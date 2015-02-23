@@ -34,6 +34,8 @@ module exmem
 		   emif.Rd_o <= 0;
 		   emif.Rt_o <= 0;
 		   emif.opcode_o <= RTYPE;
+		   emif.Jump_o <= 0;
+		   
 		end
 		
 		else begin
@@ -56,6 +58,7 @@ module exmem
 			    emif.Rd_o <= emif.Rd_i;
 			    emif.Rt_o <= emif.Rt_i;
 			   emif.opcode_o <= emif.opcode_i;
+			   emif.Jump_o <= emif.Jump_i;
 			end
 			else begin
 			   emif.npc_o <= 0;
@@ -76,6 +79,8 @@ module exmem
 			   emif.Rd_o <= 0;
 			   emif.Rt_o <= 0;
 			   emif.opcode_o <= RTYPE;
+			   emif.Jump_o <= 0;
+			   
 			end
 		end
 	end

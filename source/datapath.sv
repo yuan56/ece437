@@ -56,7 +56,8 @@ module datapath (
   word_t      ALUSrc_out;            //ALUSrc mux output
   word_t      Baddr;                 //Branch mux output
   regbits_t   RegDst_out;            //RegDst mux output
-   word_t pout;
+   word_t PC_in;
+   
    
 
   //adder outputs
@@ -92,7 +93,7 @@ module datapath (
   
 
   //PC inputs
-  assign pcif.PCen = ( (dpif.ihit && !dpif.dhit) || (ieif.Jump_o) ) && ~hazard; // freezes when stalling (hazards)
+  assign pcif.PCen = ( (dpif.ihit && !dpif.dhit) || (ieif.Jump_o)) && ~hazard; // freezes when stalling (hazards)
 
   //ifid inputs
   assign iiif.npc_i = npc;
@@ -102,8 +103,24 @@ module datapath (
    assign iiif.flush = cuif.Jump; // huif.flush;
    assign iiif.iien = (huif.ihit && !huif.dhit) || !hazard; // freezes the ifid latch when hazard occur
    
+    // the next PC logic
+   always_comb begin
+      pcif.PCnext = PC_in;
+      JumpAddr = (rtype.opcode == RTYPE && rtype.funct == JR) ? rfif.rdat1 : ((itype.opcode == J || itype.opcode == JAL) ? {npc[31:28], jtype.addr, 2'b00} : npc);
+      if(cuif.Jump) begin PC_in = JumpAddr;
+      end
+      else if(branchdecide) begin PC_in = ieif.bnpc_o;
+      end
+      else begin PC_in  = npc;
+      end
+      
+
+      
+   end
+      
+	 
    
-   
+
    
  
  
@@ -202,6 +219,8 @@ module datapath (
    assign emif.Rd_i = ieif.Rd_o;
    assign emif.Rt_i = ieif.Rt_o;
    assign emif.opcode_i = ieif.opcode_o;
+   assign emif.Jump_i = ieif.Jump_o;
+   
    
 
   
@@ -232,19 +251,7 @@ module datapath (
    assign dpif.dmemREN = emif.DRen_o;
    assign dpif.dmemWEN = emif.DWen_o;
    
-   always_comb begin
-      // the next PC logic
-      pout = cuif.Jump? JumpAddr: (branchdecide? (ieif.bnpc_o + npc):npc);
-      if(cuif.Jump) begin pout = JumpAddr;
-      end
-      else if(branchdecide) begin pout = ieif.bnpc_o;
-      end
-      else begin pout = npc;
-      end
-      // Jump Address
-      JumpAddr = (rtype.opcode == RTYPE && rtype.funct == JR) ? rfif.rdat1 : ((itype.opcode == J || itype.opcode == JAL) ? {npc[31:28], jtype.addr, 2'b00} : npc);
-      pcif.PCnext = pout;
-   end
+  
 
    
   always_comb begin    
