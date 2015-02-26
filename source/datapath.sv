@@ -30,7 +30,7 @@ module datapath (
   program_counter_if pcif();        //program counter interface
   register_file_if rfif();          //register file interface
   alu_if aif();                     //alu interface
-  hazard_unit_if huif();            //hazard unit interface
+  //hazard_unit_if huif();            //hazard unit interface
   ifid_if iiif();                   //IF / ID interface
   idex_if ieif();                   //ID / EX interface
   exmem_if emif();                  //EX / MEM interface
@@ -42,7 +42,7 @@ module datapath (
   register_file rf (CLK, nRST, rfif);
   alu alu (aif);
   extender ext (eif);
-  hazard_unit hu (huif);
+  //hazard_unit hu (huif);
   ifid ifid(CLK, nRST, iiif);
   idex idex(CLK, nRST, ieif);
   exmem exmem (CLK, nRST, emif);
@@ -72,13 +72,19 @@ module datapath (
    i_t itype;
    j_t jtype;
    r_t rtype;
+   i_t itype_fetch;
+   j_t jtype_fetch;
+   r_t rtype_fetch;
    assign itype = i_t'(iiif.iload_o);
    assign rtype = r_t'(iiif.iload_o);
    assign jtype = j_t'(iiif.iload_o);
-
+   assign itype_fetch = i_t'(iiif.iload_i);
+   assign rtype_fetch = r_t'(iiif.iload_i);
+   assign jtype_fetch = j_t'(iiif.iload_i);
 
   // mux signals for forwarding unit
-  logic      memfwA, wbfwA, memfwB, wbfwB, jumpfwA, jumpfwB, storefw;
+   logic      memfwA, wbfwA, memfwB, wbfwB, jumpfwA, jumpfwB, storefw, storefwfromwb;
+   word_t portA_in, portB_in;
       
   //Enable signal for latches
  
@@ -93,19 +99,20 @@ module datapath (
   
 
   //PC inputs
-  assign pcif.PCen = ( (dpif.ihit && !dpif.dhit) || (ieif.Jump_o)) && ~hazard; // freezes when stalling (hazards)
+  assign pcif.PCen = ( (dpif.ihit && !dpif.dhit) ) && ~hazard; // freezes when stalling (hazards)
 
   //ifid inputs
   assign iiif.npc_i = npc;
   //assign iiif.iload_i = dpif.imemload;
    assign iiif.iload_i = dpif.dhit ? 0: dpif.imemload;
    
-   assign iiif.flush = cuif.Jump; // huif.flush;
-   assign iiif.iien = (huif.ihit && !huif.dhit) || !hazard; // freezes the ifid latch when hazard occur
-   
+   assign iiif.flush = cuif.Jump || branchdecide; // huif.flush;
+   assign iiif.iien = !hazard;
+// (dpif.ihit && !dpif.dhit) || !hazard; // freezes the ifid latch when hazard occur
+   assign pcif.PCnext = PC_in;
     // the next PC logic
    always_comb begin
-      pcif.PCnext = PC_in;
+      
       JumpAddr = (rtype.opcode == RTYPE && rtype.funct == JR) ? rfif.rdat1 : ((itype.opcode == J || itype.opcode == JAL) ? {npc[31:28], jtype.addr, 2'b00} : npc);
       if(cuif.Jump) begin PC_in = JumpAddr;
       end
@@ -113,17 +120,7 @@ module datapath (
       end
       else begin PC_in  = npc;
       end
-      
-
-      
    end
-      
-	 
-   
-
-   
- 
- 
   //Reg File inputs
    assign rfif.rsel1 = rtype.rs; // mux included for forwarding// regbits_t'(iiif.iload_o[25:21]);
    assign rfif.rsel2 = rtype.rt;  //rt // regbits_t'(iiif.iload_o[20:16]);
@@ -172,20 +169,92 @@ module datapath (
 						 
    
    
-  // Forwarding unit muxes  
+  // Forwarding unit muxes
+   // dependency is stated as [type using the source]-[type producing the result]
   always_comb begin
-     memfwA = ( (emif.Rd_o == ieif.Rs_o) && (ieif.ALUSrc_o != 1) ) && (emif.Rd_o != 0);
-     memfwB = (emif.Rd_o == ieif.Rt_o) && (emif.Rd_o != 0)  && (ieif.DWen_o != 1);
+     memfwA = 0;
+     memfwB = 0;
+     wbfwA = 0;
+     wbfwB = 0;
+     
+     // ALU Port A Forwarding  (from MEM)
+     if((emif.Rd_o != 0 && emif.ALUSrc_o != 1) || (emif.Rt_o != 0 && emif.ALUSrc_o == 1)) begin 
+	if(emif.Rd_o == ieif.Rs_o && emif.ALUSrc_o != 1) begin // RTYPE-RTYPE dependency
+	   memfwA = 1;
+	end
+	else if( (ieif.Rs_o == emif.Rt_o) &&  (emif.ALUSrc_o == 1) ) begin // RTYPE-ITYPE dependency
+	   if(emif.DRen_o != 1) begin // dont do this for load
+	      memfwA = 1;
+	   end
+	end
+	else begin memfwA = 0;
+	end
+     end // if (emif.Rd != 0)
+
+
+     // ALU Port B Forwarding (from MEM)
+     if((emif.Rd_o != 0 && emif.ALUSrc_o != 1) || (emif.Rt_o != 0 && emif.ALUSrc_o == 1)) begin  // make sure not writing to REG0
+	if(emif.Rd_o == ieif.Rt_o && emif.ALUSrc_o != 1) begin // RTYPE-RTYPE dependency
+	   if(ieif.ALUSrc_o == 0) begin // ensure EX is RTYPE
+	      memfwB = 1;
+	   end
+	end
+	else if( (emif.Rt_o == ieif.Rt_o)) begin // RTYPE-ITYPE dependency
+	   if(emif.ALUSrc_o == 1) begin // ensure MEM is ITYPE
+	      if(ieif.ALUSrc_o != 1) begin // ensure EX is RTYPE
+		 if(emif.DRen_o != 1) begin // don't do this for load (in MEM)
+		    memfwB = 1;
+		 end
+	      end
+	   end
+	end
+     end // if (emif.Rd_o != 0 || (emif.Rt_o != 0 && emif.ALUSrc_o == 1))
+
+     // ALU Port A Forwarding  (from WB)
+     if((mwif.Rd_o != 0 && mwif.ALUSrc_o != 1) || (mwif.Rt_o != 0 && mwif.ALUSrc_o == 1)) begin 
+	if(mwif.Rd_o == ieif.Rs_o && mwif.ALUSrc_o != 1) begin // RTYPE-RTYPE dependency
+	   wbfwA = 1;
+	end
+	else if( (ieif.Rs_o == mwif.Rt_o) &&  (mwif.ALUSrc_o == 1)) begin // RTYPEorITYPE-ITYPE dependency
+	   wbfwA = 1;
+	end
+	else begin wbfwA = 0;
+	end
+     end // if (mwif.Rd != 0)
+
+     // ALU Port B Forwarding (from WB)
+     if((mwif.Rd_o != 0 && mwif.ALUSrc_o != 1) || (mwif.Rt_o != 0 && mwif.ALUSrc_o == 1)) begin  // make sure not writing to REG0
+	if(mwif.Rd_o == ieif.Rt_o && mwif.ALUSrc_o != 1) begin // RTYPE-RTYPE dependency
+	   if(ieif.ALUSrc_o == 0) begin // ensure EX is RTYPE
+	      wbfwB = 1;
+	   end
+	end
+	else if( (mwif.Rt_o == ieif.Rt_o)) begin // RTYPE-ITYPE dependency
+	   if(mwif.ALUSrc_o == 1) begin // ensure WB is ITYPE
+	      if(ieif.ALUSrc_o != 1) begin // ensure EX is RTYPE
+		 wbfwB = 1;
+	      end
+	   end
+	end
+     end // if (mwif.Rd_o != 0 || (mwif.Rt_o != 0 && mwif.ALUSrc_o == 1))
+
+      
+	   
+              /*                           
+     memfwA = ( (emif.Rd_o == ieif.Rs_o) && (ieif.ALUSrc_o != 1) || (emif.Rt_o == ieif.Rs_o && emif.ALUSrc_o == 1) ) && (emif.Rd_o != 0);
+     memfwB = ( (emif.Rd_o == ieif.Rt_o) && (emif.Rd_o != 0) || (emif.Rt_o == ieif.Rt_o && emif.ALUSrc_o == 1 && ieif.ALUSrc_o != 1))   && (ieif.DWen_o != 1);
      wbfwA =  ( ( (mwif.Rd_o == ieif.Rs_o) && (ieif.ALUSrc_o != 1) ) || ( (mwif.Rt_o == ieif.Rs_o) && (ieif.ALUSrc_o == 1) ) )  && (mwif.Rd_o != 0);
-     wbfwB =  (mwif.Rd_o == ieif.Rt_o) && (mwif.Rd_o != 0) ;
+     wbfwB =  (mwif.Rd_o == ieif.Rt_o) && (mwif.Rd_o != 0) ;*/
+     
      jumpfwA = (mwif.RegDst_o == 2) && (ieif.Rs_o == 31);
      jumpfwB = (mwif.RegDst_o == 2) && (ieif.Rt_o == 31);
-     storefw = (emif.Rd_o == ieif.Rt_o) && (ieif.DWen_o == 1);     
+     storefw = (emif.Rd_o == ieif.Rt_o || emif.Rd_o == ieif.Rs_o) && (ieif.DWen_o == 1) && (ieif.Rs_o != 0) && (ieif.Rt_o != 0);
+     storefwfromwb = (mwif.Rd_o == ieif.Rt_o || mwif.Rd_o == ieif.Rs_o) && (ieif.DWen_o == 1) && (ieif.Rs_o != 0) && (ieif.Rt_o != 0);
    end
       
    // Hazard unit for stalling
    always_comb begin
-      hazard = ieif.RegWrite_o && (ieif.Rt_o == rtype.rs || ieif.Rt_o == rtype.rt) && (ieif.Rt_o != 0);
+      hazard = ieif.DRen_o && (ieif.Rt_o == rtype.rs || ieif.Rt_o == rtype.rt) && (ieif.Rt_o != 0);
       // if hazard is 1, insert nops at IDEX latch, and freeze PC and IFID latch.
    end
  
@@ -193,11 +262,37 @@ module datapath (
    always_comb begin
       branchdecide = (ieif.opcode_o == BEQ && aif.zflag == 1) || (ieif.opcode_o == BNE && aif.zflag == 0);
    end
-    
 
    //ALU inputs
-   assign aif.portA = (jumpfwA) ? MtR_out: ((memfwA) ? emif.aluout_o : ( (wbfwA) ?  MtR_out : ieif.rdata1_o));
-   assign aif.portB = (jumpfwB) ? MtR_out: ((memfwB) ? emif.aluout_o : ( (wbfwB) ?  MtR_out : ALUSrc_out));
+   always_comb begin
+      // ALU ports wire
+      if(jumpfwA || wbfwA) portA_in = MtR_out;
+      else if(memfwA) begin
+	 case(emif.MemtoReg_o)
+	   0: portA_in = emif.aluout_o;
+	   1: portA_in = dpif.dmemload;
+	   2: portA_in = emif.extout_o;
+	   default: portA_in = ieif.rdata1_o;
+	 endcase // case (emif.MemtoReg_o)
+      end
+      else portA_in = ieif.rdata1_o;
+      
+      
+      if(jumpfwB || wbfwB) portB_in = MtR_out;
+      else if(memfwB) begin
+	 case(emif.MemtoReg_o)
+	   0: portB_in = emif.aluout_o;
+	   1: portB_in = dpif.dmemload;
+	   2: portB_in = emif.extout_o;
+	   default: portB_in = ALUSrc_out;
+	 endcase // case (emif.MemtoReg_o)
+      end
+      else portB_in = ALUSrc_out;
+   end
+   assign aif.portA = portA_in;
+   // (jumpfwA) ? MtR_out: ((memfwA) ? emif.aluout_o : ( (wbfwA) ?  MtR_out : ieif.rdata1_o));
+   assign aif.portB = portB_in;
+   // (jumpfwB) ? MtR_out: ((memfwB) ? emif.aluout_o : ( (wbfwB) ? MtR_out : ALUSrc_out));
    assign aif.aluop = ieif.ALUop_o;
    
   //exmemif inputs
@@ -205,7 +300,7 @@ module datapath (
    assign emif.bnpc_i = 0;
    //{{14{dpif.imemload[15]}},dpif.imemload[15:0], 2'b00};  //Branch address
    assign emif.Jaddr_i = ieif.Jaddr_o;
-   assign emif.rdata2_i = (storefw) ? emif.aluout_o : ieif.rdata2_o;
+   assign emif.rdata2_i = (storefw) ? emif.aluout_o :( (storefwfromwb) ? MtR_out : ieif.rdata2_o ) ;
    assign emif.aluout_i = aif.outport;
    assign emif.extout_i = ieif.extout_o;
    assign emif.Branch_i = ieif.Branch_o;
@@ -238,6 +333,8 @@ module datapath (
    assign mwif.Rd_i = emif.Rd_o;
    assign mwif.Rt_i = emif.Rt_o;
    assign mwif.opcode_i = emif.opcode_o;
+   assign mwif.ALUSrc_i = emif.ALUSrc_o;
+   
    
   
    //datapath inputs

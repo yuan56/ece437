@@ -23,9 +23,9 @@ module pc(
 		end
 
 		else begin
-			if (pcif.PCen) begin
-				pcif.PCcurr <= pcif.PCnext;
-			end
+		   if (pcif.PCen) begin
+			   pcif.PCcurr <= pcif.PCnext;
+		   end
 		end
 
 	end

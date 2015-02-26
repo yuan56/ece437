@@ -29,6 +29,7 @@ module memwb
 		   mwif.Rd_o <= 0;
 		   mwif.Rt_o <= 0;
 		   mwif.opcode_o <= RTYPE;
+		   mwif.ALUSrc_o <= 0;
 		   
 		end
 		
@@ -47,7 +48,7 @@ module memwb
 		   	   mwif.Rd_o <= mwif.Rd_i;
 		   	   mwif.Rt_o <= mwif.Rt_i;
 			   mwif.opcode_o <= mwif.opcode_i;
-			   
+			   mwif.ALUSrc_o <= mwif.ALUSrc_i;
 		   	end
 		   	else begin
 		   	   mwif.npc_o <= 0;
@@ -63,7 +64,8 @@ module memwb
 			   mwif.Rd_o <= 0;
 			   mwif.Rt_o <= 0;
 			   mwif.opcode_o <= RTYPE;
-		   	end
+			   mwif.ALUSrc_o <= 0;
+			end
 		end
 	end
 
