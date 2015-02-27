@@ -27,7 +27,7 @@ interface idex_if;
 			halt_i, halt_o,
 			flush,
 			noop_i,
-			Jump_i, Jump_o
+			Jump_i, Jump_o, enable_i
 			
 			;
    
@@ -46,7 +46,7 @@ interface idex_if;
    word_t    bnpc_i, bnpc_o;
    
 	modport ie (
-		input 	npc_i, Jaddr_i, rdata1_i, rdata2_i, extout_i, MemtoReg_i, ALUSrc_i, Branch_i, DRen_i, DWen_i, ALUop_i, RegDst_i, RegWrite_i, halt_i, Rd_i, Rt_i, flush, noop_i, Rs_i, opcode_i, shamt_i, bnpc_i, Jump_i,
+		input 	npc_i, Jaddr_i, rdata1_i, rdata2_i, extout_i, MemtoReg_i, ALUSrc_i, Branch_i, DRen_i, DWen_i, ALUop_i, RegDst_i, RegWrite_i, halt_i, Rd_i, Rt_i, flush, noop_i, Rs_i, opcode_i, shamt_i, bnpc_i, Jump_i, enable_i,
 		output 	npc_o, Jaddr_o, rdata1_o, rdata2_o, extout_o, MemtoReg_o, ALUSrc_o, Branch_o, DRen_o, DWen_o, ALUop_o, RegDst_o, RegWrite_o, halt_o, Rd_o, Rt_o, Rs_o, opcode_o, shamt_o, bnpc_o, Jump_o
 		);
 

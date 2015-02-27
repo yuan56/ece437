@@ -62,25 +62,30 @@ module idex
 		       ieif.shamt_o <= ieif.shamt_i;
 		      ieif.bnpc_o <= ieif.bnpc_i;
 		      ieif.Jump_o <= ieif.Jump_i;
-		   end
+		   end // if (!ieif.flush)
 		   /*
-		   else if(ieif.noop_i)begin
-		      ieif.npc_o <= 0;
-		      ieif.Jaddr_o <= 0;
-		      ieif.rdata1_o <= 0;
-		      ieif.rdata2_o <= 0;
-		      ieif.extout_o <= 0;
-		      ieif.MemtoReg_o <= 0;
-		      ieif.ALUSrc_o <= 0;
-		      ieif.Branch_o <= 0;
-		      ieif.DRen_o <= 0;
-		      ieif.DWen_o <= 0;
-		      ieif.ALUop_o <= ALU_ADD;
-		      ieif.RegWrite_o <= 0;
-		      ieif.RegDst_o <= 0;
-		      ieif.halt_o <= 0;
-		      ieif.Rd_o <= 0;
-		      ieif.Rt_o <= 0;
+		   else if(!ieif.enable_i)begin
+		      ieif.npc_o <= ieif.npc_o;
+		      ieif.Jaddr_o <= ieif.Jaddr_o;
+		      ieif.rdata1_o <= ieif.rdata1_o;
+		      ieif.rdata2_o <= ieif.rdata2_o;
+		      ieif.extout_o <= ieif.extout_o;
+		      ieif.MemtoReg_o <= ieif.MemtoReg_o;
+		      ieif.ALUSrc_o <= ieif.ALUSrc_o;
+		      ieif.Branch_o <= ieif.Branch_o;
+		      ieif.DRen_o <= ieif.DRen_o;
+		      ieif.DWen_o <= ieif.DWen_o;
+		      ieif.ALUop_o <= ieif.ALUop_o;
+		      ieif.RegWrite_o <= ieif.RegWrite_o;
+		      ieif.RegDst_o <= ieif.RegDst_o;
+		      ieif.halt_o <= ieif.halt_o;
+		      ieif.Rd_o <= ieif.Rd_o;
+		      ieif.Rt_o <= ieif.Rt_o;
+		      ieif.Rs_o <= ieif.Rs_o;
+		      ieif.opcode_o <= ieif.opcode_o;
+		       ieif.shamt_o <= ieif.shamt_o;
+		      ieif.bnpc_o <= ieif.bnpc_o;
+		      ieif.Jump_o <= ieif.Jump_o;
 		   end // if (ieif.noop_i)
 		   */
 		   else begin

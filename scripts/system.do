@@ -115,44 +115,45 @@ add wave -noupdate -group ifid /system_tb/DUT/CPU/DP/iiif/flush
 add wave -noupdate -group ifid /system_tb/DUT/CPU/DP/iiif/npc_i
 add wave -noupdate -group ifid /system_tb/DUT/CPU/DP/iiif/iload_i
 add wave -noupdate -group ifid /system_tb/DUT/CPU/DP/iiif/iload_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/opcode_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/opcode_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/bnpc_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/bnpc_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/flush
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Rs_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Rt_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Rd_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Rs_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Rt_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Rd_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/npc_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Jaddr_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Jaddr_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/rdata1_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/rdata1_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/rdata2_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/rdata2_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/extout_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/extout_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Branch_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/Branch_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/DRen_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/DRen_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/DWen_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/DWen_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/RegWrite_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/RegWrite_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/RegDst_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/RegDst_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/halt_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/halt_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/MemtoReg_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/MemtoReg_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/ALUSrc_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/ALUSrc_o
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/ALUop_i
-add wave -noupdate -group idex /system_tb/DUT/CPU/DP/ieif/ALUop_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/enable_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/opcode_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/opcode_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/bnpc_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/bnpc_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/flush
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rs_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rt_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rd_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rs_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rt_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Rd_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/npc_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Jaddr_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Jaddr_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/rdata1_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/rdata1_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/rdata2_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/rdata2_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/extout_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/extout_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Branch_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/Branch_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/DRen_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/DRen_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/DWen_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/DWen_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/RegWrite_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/RegWrite_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/RegDst_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/RegDst_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/halt_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/halt_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/MemtoReg_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/MemtoReg_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/ALUSrc_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/ALUSrc_o
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/ALUop_i
+add wave -noupdate -expand -group idex /system_tb/DUT/CPU/DP/ieif/ALUop_o
 add wave -noupdate -group exmem /system_tb/DUT/CPU/DP/emif/opcode_i
 add wave -noupdate -group exmem /system_tb/DUT/CPU/DP/emif/opcode_o
 add wave -noupdate -group exmem /system_tb/DUT/CPU/DP/emif/Rd_i
@@ -189,33 +190,33 @@ add wave -noupdate -group exmem /system_tb/DUT/CPU/DP/emif/MemtoReg_i
 add wave -noupdate -group exmem /system_tb/DUT/CPU/DP/emif/MemtoReg_o
 add wave -noupdate -group exmem /system_tb/DUT/CPU/DP/emif/ALUSrc_i
 add wave -noupdate -group exmem /system_tb/DUT/CPU/DP/emif/ALUSrc_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/opcode_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/opcode_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/Rd_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/Rt_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/Rd_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/Rt_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/npc_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/Jaddr_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/Jaddr_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/aluout_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/aluout_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/dload_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/dload_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/extout_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/extout_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/halt_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/halt_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/mwen
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/RegDst_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/RegDst_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/RegWrite_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/RegWrite_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/MemtoReg_i
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/MemtoReg_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/ALUSrc_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/Rt_o
-add wave -noupdate -expand -group memwr /system_tb/DUT/CPU/DP/mwif/Rd_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/opcode_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/opcode_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/Rd_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/Rt_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/Rd_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/Rt_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/npc_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/Jaddr_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/Jaddr_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/aluout_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/aluout_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/dload_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/dload_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/extout_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/extout_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/halt_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/halt_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/mwen
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/RegDst_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/RegDst_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/RegWrite_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/RegWrite_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/MemtoReg_i
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/MemtoReg_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/ALUSrc_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/Rt_o
+add wave -noupdate -group memwr /system_tb/DUT/CPU/DP/mwif/Rd_o
 add wave -noupdate -group eif /system_tb/DUT/CPU/DP/eif/ExtSel
 add wave -noupdate -group eif /system_tb/DUT/CPU/DP/eif/imm
 add wave -noupdate -group eif /system_tb/DUT/CPU/DP/eif/extout
@@ -236,4 +237,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {1334559 ps} {1670755 ps}
+WaveRestoreZoom {0 ps} {336196 ps}

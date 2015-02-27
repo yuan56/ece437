@@ -13,12 +13,12 @@ module register_file
     register_file_if.rf rfif
 );
 
-    word_t Reg_Arr[31:0] ;
+    word_t Reg_Arr[31:0];
 
     assign rfif.rdat1 = Reg_Arr[rfif.rsel1];
     assign rfif.rdat2 = Reg_Arr[rfif.rsel2];
 
-    always_ff @(CLK or negedge nRST) begin
+    always_ff @(negedge CLK or negedge nRST) begin
         
         if (!nRST) begin
             Reg_Arr <= '{default:0};
@@ -26,7 +26,7 @@ module register_file
         end
 
         else begin
-             if ((rfif.WEN == 1'b1) & (rfif.wsel != 5'b00000)) begin
+             if ((rfif.WEN == 1'b1) && (rfif.wsel != 5'b00000)) begin
                 Reg_Arr[rfif.wsel] <= rfif.wdat;
             end  
             

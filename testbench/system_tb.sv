@@ -36,16 +36,16 @@ module system_tb;
 `ifndef MAPPED
   system                              DUT (CLK,nRST,syif);
 `else
-  system                              DUT (,,,,//for altera debug ports
-    CLK,
-    nRST,
-    syif.halt,
-    syif.load,
-    syif.addr,
-    syif.store,
-    syif.REN,
-    syif.WEN,
-    syif.tbCTRL
+  system                              DUT (//,,,,//for altera debug ports
+    .\CLK (CLK),
+    .\nRST (nRST),
+    .\syif.halt (syif.halt),
+    .\syif.load (syif.load),
+    .\syif.addr (syif.addr),
+    .\syif.store (syif.store),
+    .\syif.REN (syif.REN),
+    .\syif.WEN (syif.WEN),
+    .\syif.tbCTRL (syif.tbCTRL)
   );
 `endif
 endmodule
