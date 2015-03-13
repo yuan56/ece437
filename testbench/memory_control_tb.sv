@@ -81,7 +81,7 @@ program test
         $display("Instruction Fetch Test PASSED!\n");
       end
       else begin
-        $error("Instructino Fetch Test FAILED!\n");
+        $error("Instruction Fetch Test FAILED!\n");
       end
       
       #(PERIOD)
@@ -171,9 +171,6 @@ program test
     end
     dump_memory();
     $finish;
-
-
-
 	end
 
   task automatic dump_memory();

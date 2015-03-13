@@ -241,12 +241,7 @@ module datapath (
 
       
 	   
-              /*                           
-     memfwA = ( (emif.Rd_o == ieif.Rs_o) && (ieif.ALUSrc_o != 1) || (emif.Rt_o == ieif.Rs_o && emif.ALUSrc_o == 1) ) && (emif.Rd_o != 0);
-     memfwB = ( (emif.Rd_o == ieif.Rt_o) && (emif.Rd_o != 0) || (emif.Rt_o == ieif.Rt_o && emif.ALUSrc_o == 1 && ieif.ALUSrc_o != 1))   && (ieif.DWen_o != 1);
-     wbfwA =  ( ( (mwif.Rd_o == ieif.Rs_o) && (ieif.ALUSrc_o != 1) ) || ( (mwif.Rt_o == ieif.Rs_o) && (ieif.ALUSrc_o == 1) ) )  && (mwif.Rd_o != 0);
-     wbfwB =  (mwif.Rd_o == ieif.Rt_o) && (mwif.Rd_o != 0) ;*/
-     
+            
      jumpfwA = (mwif.RegDst_o == 2) && (ieif.Rs_o == 31);
      jumpfwB = (mwif.RegDst_o == 2) && (ieif.Rt_o == 31);
      storefw = ((emif.Rd_o == ieif.Rt_o) || (emif.Rt_o == ieif.Rt_o) && (emif.ALUSrc_o == 1)) && (ieif.DWen_o == 1) && (ieif.Rs_o != 0) && (ieif.Rt_o != 0);
@@ -291,9 +286,7 @@ module datapath (
       else portB_in = ALUSrc_out;
    end
    assign aif.portA = portA_in;
-   // (jumpfwA) ? MtR_out: ((memfwA) ? emif.aluout_o : ( (wbfwA) ?  MtR_out : ieif.rdata1_o));
    assign aif.portB = portB_in;
-   // (jumpfwB) ? MtR_out: ((memfwB) ? emif.aluout_o : ( (wbfwB) ? MtR_out : ALUSrc_out));
    assign aif.aluop = ieif.ALUop_o;
    
   //exmemif inputs
