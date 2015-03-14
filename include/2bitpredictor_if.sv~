@@ -1,0 +1,15 @@
+// 2 bit predictor
+// Aiman Md Uslim
+
+`ifndef TWOBIT_IF_VH
+`define TWOBIT_IF_VH
+
+
+// all types
+
+// all types
+`include "cpu_types_pkg.vh"
+
+interface 2bitpredictor_if;
+	//import types
+	import cpu_types_pkg::*;

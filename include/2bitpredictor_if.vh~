@@ -1,0 +1,36 @@
+// 2 bit predictor
+// Aiman Md Uslim
+
+`ifndef TWOBIT_IF_VH
+`define TWOBIT_IF_VH
+
+
+// all types
+
+// all types
+`include "cpu_types_pkg.vh"
+
+interface 2bitpredictor_if;
+	//import types
+   import cpu_types_pkg::*;
+
+   typedef enum logic[2:0] {TAKE, LEAVE, FAULTED_TAKE, FAULTED, LEAVE} bit2_t;
+
+   // inputs
+   logic 	wrong_taken;
+   logic 	decision; // taken = 1; untaken; 0
+
+   modport twobit(
+		  input wrong_taken,
+		  output decision
+		  );
+   
+endinterface // 2bitpredictor_if
+`endif //  `ifndef TWOBIT_IF_VH
+
+
+		  
+	
+   
+   
+	       
