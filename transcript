@@ -1,4 +1,3 @@
-# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {run -all; exit;} -c -wlf dcache_tb.wlf work.dcache_tb 
 # //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-504.8.1.el6.x86_64
 # //
 # //  Copyright 1991-2013 Mentor Graphics Corporation
@@ -8,6 +7,7 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
+# vsim -L altera_mf_ver -L altera_ver -L cycloneii_ver -L cycloneive_ver -do {view objects; add wave *; run -all;} -onfinish stop -wlf dcache_tb.wlf work.dcache_tb 
 # Loading sv_std.std
 # Loading work.cpu_types_pkg
 # Loading work.dcache_tb
@@ -21,6 +21,143 @@
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # Loading work.memory_control
 # Loading work.dcache
-# run -all 
+# view objects 
+# .main_pane.objects.interior.cs.body.tree
+#  add wave * 
+#  run -all 
 # reset
 # First fetch
+# Break in Module test at testbench/dcache_tb.sv line 87
+#  
+add wave -position end  sim:/dcache_tb/DUT/CLK
+add wave -position end  sim:/dcache_tb/DUT/nRST
+add wave -position end  sim:/dcache_tb/DUT/curr_state
+add wave -position end  sim:/dcache_tb/DUT/next_state
+add wave -position end  sim:/dcache_tb/DUT/daddr
+add wave -position end  sim:/dcache_tb/DUT/Blk1_Word1
+add wave -position end  sim:/dcache_tb/DUT/Blk1_Word2
+add wave -position end  sim:/dcache_tb/DUT/Blk2_Word1
+add wave -position end  sim:/dcache_tb/DUT/Blk2_Word2
+add wave -position end  sim:/dcache_tb/DUT/Blk1_Valid
+add wave -position end  sim:/dcache_tb/DUT/Blk2_Valid
+add wave -position end  sim:/dcache_tb/DUT/Blk1_Dirty
+add wave -position end  sim:/dcache_tb/DUT/Blk2_Dirty
+add wave -position end  sim:/dcache_tb/DUT/Blk1_mru
+add wave -position end  sim:/dcache_tb/DUT/Blk2_mru
+add wave -position end  sim:/dcache_tb/DUT/Blk1_Tag
+add wave -position end  sim:/dcache_tb/DUT/Blk2_Tag
+add wave -position end  sim:/dcache_tb/DUT/dhit
+add wave -position end  sim:/dcache_tb/DUT/blk1en
+add wave -position end  sim:/dcache_tb/DUT/blk2en
+add wave -position end  sim:/dcache_tb/DUT/word1en
+add wave -position end  sim:/dcache_tb/DUT/word2en
+add wave -position end  sim:/dcache_tb/DUT/WBaddr
+add wave -position end  sim:/dcache_tb/DUT/valid1
+add wave -position end  sim:/dcache_tb/DUT/valid2
+add wave -position end  sim:/dcache_tb/DUT/nmru1
+add wave -position end  sim:/dcache_tb/DUT/nmru2
+add wave -position end  sim:/dcache_tb/DUT/ndirty1
+add wave -position end  sim:/dcache_tb/DUT/ndirty2
+add wave -position end  sim:/dcache_tb/DUT/nextTag1
+add wave -position end  sim:/dcache_tb/DUT/nextTag2
+add wave -position end  sim:/dcache_tb/DUT/nextword
+add wave -position end  sim:/dcache_tb/DUT/writeb1w1
+add wave -position end  sim:/dcache_tb/DUT/writeb1w2
+add wave -position end  sim:/dcache_tb/DUT/writeb2w1
+add wave -position end  sim:/dcache_tb/DUT/writeb2w2
+add wave -position end  sim:/dcache_tb/DUT/i
+add wave -position end  sim:/dcache_tb/MC/ccif/iwait
+add wave -position end  sim:/dcache_tb/MC/ccif/dwait
+add wave -position end  sim:/dcache_tb/MC/ccif/iREN
+add wave -position end  sim:/dcache_tb/MC/ccif/dREN
+add wave -position end  sim:/dcache_tb/MC/ccif/dWEN
+add wave -position end  sim:/dcache_tb/MC/ccif/iload
+add wave -position end  sim:/dcache_tb/MC/ccif/dload
+add wave -position end  sim:/dcache_tb/MC/ccif/dstore
+add wave -position end  sim:/dcache_tb/MC/ccif/iaddr
+add wave -position end  sim:/dcache_tb/MC/ccif/daddr
+add wave -position end  sim:/dcache_tb/MC/ccif/ramWEN
+add wave -position end  sim:/dcache_tb/MC/ccif/ramREN
+add wave -position end  sim:/dcache_tb/MC/ccif/ramstate
+add wave -position end  sim:/dcache_tb/MC/ccif/ramaddr
+add wave -position end  sim:/dcache_tb/MC/ccif/ramstore
+add wave -position end  sim:/dcache_tb/MC/ccif/ramload
+add wave -position 9  sim:/dcache_tb/DUT/dcif/dhit
+add wave -position 10  sim:/dcache_tb/DUT/dcif/datomic
+add wave -position 11  sim:/dcache_tb/DUT/dcif/dmemREN
+add wave -position 12  sim:/dcache_tb/DUT/dcif/dmemWEN
+add wave -position 13  sim:/dcache_tb/DUT/dcif/dmemload
+add wave -position 14  sim:/dcache_tb/DUT/dcif/dmemstore
+add wave -position 15  sim:/dcache_tb/DUT/dcif/dmemaddr
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/ecegrid/a/mg252/ece437/processors/scripts/dcache.do
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# Break in Module test at testbench/dcache_tb.sv line 87
+make dcache
+# make[1]: Entering directory `/home/ecegrid/a/mg252/ece437/processors'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  source/dcache.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling module dcache
+# ** Note: (vlog-143) Recognized 1 FSM in module "dcache(verilog)".
+# 
+# Top level modules:
+# 	dcache
+# make[1]: Leaving directory `/home/ecegrid/a/mg252/ece437/processors'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# Break in Module test at testbench/dcache_tb.sv line 87
+make dcache
+# make[1]: Entering directory `/home/ecegrid/a/mg252/ece437/processors'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  source/dcache.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling module dcache
+# ** Note: (vlog-143) Recognized 1 FSM in module "dcache(verilog)".
+# 
+# Top level modules:
+# 	dcache
+# make[1]: Leaving directory `/home/ecegrid/a/mg252/ece437/processors'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# Break in Module test at testbench/dcache_tb.sv line 87
+# Causality operation skipped due to absence of debug database file

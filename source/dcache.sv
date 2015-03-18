@@ -148,7 +148,7 @@ module dcache (
 			end
 
 			MISS_READ2: begin
-				if (ccif.dwait) begin
+				if (ccif.dwait == 0) begin
 					next_state = IDLE;
 				end
 				else begin
@@ -319,6 +319,7 @@ always_comb begin
 			end
 			MISS_READ1: begin// for word 1
 				ccif.dREN = 1;
+				ccif.daddr = dcif.dmemaddr;
 				nextword = ccif.dload;
 				if(Blk1_mru[daddr.idx] == 0) begin
 					nextTag1 = daddr.tag;
@@ -335,6 +336,7 @@ always_comb begin
 			end
 			MISS_READ2: begin // for word 2 
 				ccif.dREN = 1;
+				ccif.daddr = dcif.dmemaddr + 4;
 				nextword = ccif.dload;
 				if(Blk1_mru[daddr.idx] == 0) begin
 					nextTag1 = daddr.tag;
