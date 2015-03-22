@@ -70,12 +70,13 @@ program test
     
 
 
-   	$display("First fetch");
-  	dcif.dmemaddr = 32'h0000;
-    dcif.dmemREN = 1;
-    #(2 * PERIOD);
+   	   $display("First fetch");
+	   dcif.dmemaddr = 32'h0800;
+	   dcif.dmemREN = 1;
+	   #(2 * PERIOD);
+	   #(2 * PERIOD);
     for(i = 0; i < 32; i++) begin 
-      #(2 * PERIOD);
+      #(6 * PERIOD);
   		dcif.dmemaddr += 32'h4;
       #(2 * PERIOD);
   		if(dcif.ihit == 1) $display("hit\n ");

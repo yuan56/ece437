@@ -82,16 +82,21 @@ module dcache (
 			curr_state <= next_state;
 			Blk1_Valid[daddr.idx] <= valid1; 
 			Blk2_Valid[daddr.idx] <= valid2;
-			Blk1_mru[daddr.idx] <= nmru1 ^ !Blk2_mru[daddr.idx]; // one has to be used more recently than the other
-			Blk2_mru[daddr.idx] <= nmru2 ^ !Blk1_mru[daddr.idx];
+			Blk1_mru[daddr.idx] <= nmru1; // one has to be used more recently than the other
+			Blk2_mru[daddr.idx] <= nmru2;
 			Blk1_Dirty[daddr.idx] <= ndirty1;
 			Blk2_Dirty[daddr.idx] <= ndirty2;
-			
+                        Blk1_Tag[daddr.idx] <= nextTag1;
+		        Blk2_Tag[daddr.idx] <= nextTag2;
+		   
+		   
 			// Now block word, but only for writing
 			Blk1_Word1[daddr.idx] <= (writeb1w1) ? nextword : Blk1_Word1[daddr.idx];
 			Blk1_Word2[daddr.idx] <= (writeb1w2) ? nextword : Blk1_Word2[daddr.idx];
 			Blk2_Word1[daddr.idx] <= (writeb2w1) ? nextword : Blk2_Word1[daddr.idx];
 			Blk2_Word2[daddr.idx] <= (writeb2w2) ? nextword : Blk2_Word2[daddr.idx];
+		   
+		  
 
 		end
 	end
@@ -139,7 +144,7 @@ module dcache (
 				end
 			end
 			MISS_READ1: begin
-				if (ccif.dwait) begin
+				if (dhit) begin
 					next_state = MISS_READ2;
 				end
 				else begin
@@ -338,7 +343,7 @@ always_comb begin
 				ccif.dREN = 1;
 				ccif.daddr = dcif.dmemaddr + 4;
 				nextword = ccif.dload;
-				if(Blk1_mru[daddr.idx] == 0) begin
+				if(Blk1_mru[daddr.idx] == 1) begin
 					nextTag1 = daddr.tag;
 					writeb1w2 = 1;
 					nmru1 = 1;
