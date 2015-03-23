@@ -131,7 +131,9 @@ module dcache (
 					next_state = IDLE;
 				end
 				else if (dhit == 1'b0) begin
-					next_state = MISS_READ1;
+					// consider condition when replacing blocks that are dirty
+					if((Blk1_Dirty[daddr.idx] == 1 && Blk1_mru[daddr.idx] == 0) || (Blk2_Dirty[daddr.idx] == 1 && Blk2_mru[daddr.idx] == 0)) next_state = REPLACE_WRITE1;
+					else next_state = MISS_READ1;
 				end
 				else begin
 					next_state = HIT_READ;
@@ -180,7 +182,9 @@ module dcache (
 
 			REPLACE_WRITE2: begin
 				if (ccif.dwait == 0) begin
-					next_state = WRITE_CACHE;
+					if(dcif.dmemWEN) next_state = WRITE_CACHE;
+					else if(dcif.dmemREN) next_state = MISS_READ1;
+					else next_state = REPLACE_WRITE2;
 				end
 				else begin
 					next_state = REPLACE_WRITE2;
@@ -273,10 +277,12 @@ always_comb begin
 				if(Blk1_mru[daddr.idx] == 0) begin
 					writeb1w1 = word1en;
 					writeb1w2 = word2en;
+					ndirty1 = 1;
 				end
 				else begin
 					writeb2w1 = word1en;
 					writeb2w2 = word2en;
+					ndirty2 = 1;
 				end
 				/*
 				if(Blk1_mru[daddr.idx] == 0) begin	

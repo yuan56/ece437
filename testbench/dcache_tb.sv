@@ -70,23 +70,38 @@ program test
     
 
 
-   	   $display("First fetch");
+   	$display("First fetch");
 	   dcif.dmemaddr = 32'h0800;
 	   dcif.dmemREN = 1;
 	   #(2 * PERIOD);
 	   #(2 * PERIOD);
-    for(i = 0; i < 48; i++) begin
+  for(i = 0; i < 47; i++) begin
        $display("dmemaddr: %x", dcif.dmemaddr);
       #(6 * PERIOD);
   		dcif.dmemaddr += 32'h4;
       #(2 * PERIOD);
   		if(dcif.dhit == 1) $display("hit\n ");
       #(2 * PERIOD);
-             
-       //dcif.dmemaddr = (i == 15) ? 32'h0800 : dcif.dmemaddr;
-       //if(dcif.dmemaddr == 32'h0800 ) $display("resetting i...");
-       
 	 end
+
+   #(6 * PERIOD);
+   $display("Attempting write...");
+   dcif.dmemREN = 0;
+   dcif.dmemWEN = 1;
+   dcif.dmemaddr =  32'h0800;
+   dcif.dmemstore = 32'hafef;
+   #(6 * PERIOD);
+   dcif.dmemaddr += 4;
+   dcif.dmemstore = 32'hbdee;
+   #(6 * PERIOD);
+  for(i = 0; i < 16; i++) begin
+    dcif.dmemaddr += 4;
+    dcif.dmemstore += 4;
+    $info("Address: %x, Data: %x", dcif.dmemaddr, dcif.dmemstore);
+    #(6 * PERIOD);
+  end
+
+
  
     //dump_memory();
     $finish;
