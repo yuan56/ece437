@@ -49,6 +49,11 @@ module dcache (
 	// WB address
 	word_t WBaddr;
 
+    // flags - these flags are used to tell which block was written/overwritten during MISSREAD1 state.
+   	logic blk1flag, blk2flag, nblk1flag, nblk2flag;
+
+   
+
 
 	// next state variables for each of the modified bits
 	logic valid1, valid2, nmru1, nmru2, ndirty1, ndirty2;
@@ -77,6 +82,8 @@ module dcache (
 				Blk1_Tag[i] <= 0;
 				Blk2_Tag[i] <= 0;
 			end
+			blk1flag <= 0;
+			blk2flag <= 0;
 		end
 		else begin
 			curr_state <= next_state;
@@ -86,9 +93,10 @@ module dcache (
 			Blk2_mru[daddr.idx] <= nmru2;
 			Blk1_Dirty[daddr.idx] <= ndirty1;
 			Blk2_Dirty[daddr.idx] <= ndirty2;
-                        Blk1_Tag[daddr.idx] <= nextTag1;
-		        Blk2_Tag[daddr.idx] <= nextTag2;
-		   
+            Blk1_Tag[daddr.idx] <= nextTag1;
+		    Blk2_Tag[daddr.idx] <= nextTag2;
+		   	blk1flag <= nblk1flag;
+		   	blk2flag <= nblk2flag;
 		   
 			// Now block word, but only for writing
 			Blk1_Word1[daddr.idx] <= (writeb1w1) ? nextword : Blk1_Word1[daddr.idx];
@@ -213,6 +221,9 @@ always_comb begin
 		writeb1w2 = 0;
 		writeb2w1 = 0;
 		writeb2w2 = 0;
+
+		nblk1flag = 0;
+		nblk2flag = 0;
 		casez(curr_state)	
 			IDLE: begin
 				dcif.dmemload = 0;
@@ -323,9 +334,37 @@ always_comb begin
 				end*/
 			end
 			MISS_READ1: begin// for word 1
-				ccif.dREN = 1;
-				ccif.daddr = dcif.dmemaddr;
-				nextword = ccif.dload;
+			   ccif.dREN = 1;
+			   ccif.daddr = dcif.dmemaddr;
+			   nextword = ccif.dload;
+			   if(Blk1_Valid[daddr.idx] == 0) begin
+			      	nextTag1 = daddr.tag;
+				   	writeb1w1 = 1;
+				   	nmru1 = 1;
+				   	nmru2 = 0;
+				   	valid1 = 1;
+				   	nblk1flag = 1;
+			   end
+			   else begin // if block 1 has some data, then block 2 must have a valid data as well
+			      	// In this case, take the least recently used block to replace
+			      	if(Blk1_mru[daddr.idx] == 0) begin
+				 		nextTag1 = daddr.tag;
+						writeb1w1 = 1;
+					 	nmru1 = 1;
+					 	nmru2 = 0;
+					 	valid1 = 1;
+					 	nblk1flag = 1;
+				    end
+				    else begin
+						nextTag2 = daddr.tag;
+					 	writeb2w1 = 1;
+					 	nmru2 = 1;
+					 	nmru1 = 0;
+					 	valid2 = 1;
+					 	nblk2flag = 1;
+				    end // else: !if(Blk1_mru[daddr.ix] == 0)
+			   end // else: !if(Blk1_Valid[daddr_idx] == 0)
+			   /*
 				if(Blk1_mru[daddr.idx] == 0 && Blk1_Valid[daddr.idx] == 0) begin
 				   nextTag1 = daddr.tag;
 				   writeb1w1 = 1;
@@ -339,12 +378,22 @@ always_comb begin
 				   nmru2 = 1;
 				   nmru1 = 0;
 				   valid2 = 1;
-				end
+				end*/
 			end
 			MISS_READ2: begin // for word 2 
 				ccif.dREN = 1;
 				ccif.daddr = dcif.dmemaddr + 4;
 				nextword = ccif.dload;
+				if(blk1flag == 1) begin
+					writeb1w2 = 1;
+					nblk1flag = 0;
+				end 
+				else begin
+					writeb2w2 = 1;
+					nblk2flag = 0;
+				end
+
+				/*
 				if(Blk1_mru[daddr.idx] == 1) begin
 				   nextTag1 = daddr.tag;
 				   writeb1w2 = 1;
@@ -358,7 +407,7 @@ always_comb begin
 				   nmru2 = 1;
 				   nmru1 = 0;
 				   valid2 = 1;
-				end
+				end*/
 			end	
 		endcase
 	end
