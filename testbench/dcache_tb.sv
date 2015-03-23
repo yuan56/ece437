@@ -75,7 +75,7 @@ program test
 	   dcif.dmemREN = 1;
 	   #(2 * PERIOD);
 	   #(2 * PERIOD);
-  for(i = 0; i < 47; i++) begin
+  for(i = 0; i < 31; i++) begin
        $display("dmemaddr: %x", dcif.dmemaddr);
       #(6 * PERIOD);
   		dcif.dmemaddr += 32'h4;
