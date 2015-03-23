@@ -144,7 +144,7 @@ module dcache (
 				end
 			end
 			MISS_READ1: begin
-				if (dhit) begin
+				if (ccif.dwait == 0) begin
 					next_state = MISS_READ2;
 				end
 				else begin
@@ -326,17 +326,19 @@ always_comb begin
 				ccif.dREN = 1;
 				ccif.daddr = dcif.dmemaddr;
 				nextword = ccif.dload;
-				if(Blk1_mru[daddr.idx] == 0) begin
-					nextTag1 = daddr.tag;
-					writeb1w1 = 1;
-					nmru1 = 1;
-					valid1 = 1;
+				if(Blk1_mru[daddr.idx] == 0 && Blk1_Valid[daddr.idx] == 0) begin
+				   nextTag1 = daddr.tag;
+				   writeb1w1 = 1;
+				   nmru1 = 1;
+				   nmru2 = 0;
+				   valid1 = 1;
 				end
 				else begin // place second block
-					nextTag2 = daddr.tag;
-					writeb2w1 = 1;
-					nmru2 = 1;
-					valid2 = 1;
+				   nextTag2 = daddr.tag;
+				   writeb2w1 = 1;
+				   nmru2 = 1;
+				   nmru1 = 0;
+				   valid2 = 1;
 				end
 			end
 			MISS_READ2: begin // for word 2 
@@ -344,16 +346,18 @@ always_comb begin
 				ccif.daddr = dcif.dmemaddr + 4;
 				nextword = ccif.dload;
 				if(Blk1_mru[daddr.idx] == 1) begin
-					nextTag1 = daddr.tag;
-					writeb1w2 = 1;
-					nmru1 = 1;
-					valid1 = 1;
+				   nextTag1 = daddr.tag;
+				   writeb1w2 = 1;
+				   nmru1 = 1;
+				   nmru2 = 0;
+				   valid1 = 1;
 				end
 				else begin // place second block
-					nextTag2 = daddr.tag;
-					writeb2w2 = 1;
-					nmru2 = 1;
-					valid2 = 1;
+				   nextTag2 = daddr.tag;
+				   writeb2w2 = 1;
+				   nmru2 = 1;
+				   nmru1 = 0;
+				   valid2 = 1;
 				end
 			end	
 		endcase

@@ -75,13 +75,17 @@ program test
 	   dcif.dmemREN = 1;
 	   #(2 * PERIOD);
 	   #(2 * PERIOD);
-    for(i = 0; i < 32; i++) begin 
+    for(i = 0; i < 48; i++) begin
+       $display("dmemaddr: %x", dcif.dmemaddr);
       #(6 * PERIOD);
   		dcif.dmemaddr += 32'h4;
       #(2 * PERIOD);
-  		if(dcif.ihit == 1) $display("hit\n ");
+  		if(dcif.dhit == 1) $display("hit\n ");
       #(2 * PERIOD);
-      dcif.dmemaddr = (i >= 15) ? 32'h0000 : dcif.dmemaddr;
+             
+       //dcif.dmemaddr = (i == 15) ? 32'h0800 : dcif.dmemaddr;
+       //if(dcif.dmemaddr == 32'h0800 ) $display("resetting i...");
+       
 	 end
  
     //dump_memory();

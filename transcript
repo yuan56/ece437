@@ -341,3 +341,859 @@ restart -f; run -all
 # reset
 # First fetch
 # Break in Module test at testbench/dcache_tb.sv line 88
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+# 
+# Top level modules:
+# 	dcache_tb
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# resetting i...
+# Break in Module test at testbench/dcache_tb.sv line 91
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+# 
+# Top level modules:
+# 	dcache_tb
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# Break in Module test at testbench/dcache_tb.sv line 91
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+# 
+# Top level modules:
+# 	dcache_tb
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# Break in Module test at testbench/dcache_tb.sv line 91
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+# 
+# Top level modules:
+# 	dcache_tb
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000840
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000840
+# Break in Module test at testbench/dcache_tb.sv line 92
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+# 
+# Top level modules:
+# 	dcache_tb
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# Break in Module test at testbench/dcache_tb.sv line 93
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+###### testbench/dcache_tb.sv(79):        $assert(1) $display("dmemaddr: %x", dcif.dmemaddr);
+# ** Error: testbench/dcache_tb.sv(79): near "$display": syntax error, unexpected SYSTEM_IDENTIFIER, expecting ';'
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# make[1]: *** [dcache_tb.svo] Error 2
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+# 
+# Top level modules:
+# 	dcache_tb
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# ** Warning: (vsim-PLI-3003) testbench/dcache_tb.sv(79): [TOFD] - System task or function '$assert' is not defined.
+#         Region: /dcache_tb/PROG
+# reset
+# First fetch
+# Break in Module test at testbench/dcache_tb.sv line 93
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+# 
+# Top level modules:
+# 	dcache_tb
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# resetting i...
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# Break in Module test at testbench/dcache_tb.sv line 92
+# A time value could not be extracted from the current line
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  source/dcache.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling module dcache
+# ** Note: (vlog-143) Recognized 1 FSM in module "dcache(verilog)".
+# 
+# Top level modules:
+# 	dcache
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# resetting i...
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# Break in Module test at testbench/dcache_tb.sv line 92
+add wave -position 37  sim:/dcache_tb/DUT/Blk1_Word1
+add wave -position 38  sim:/dcache_tb/DUT/Blk1_Word2
+add wave -position 39  sim:/dcache_tb/DUT/Blk2_Word1
+add wave -position 40  sim:/dcache_tb/DUT/Blk2_Word2
+add wave -position 16  sim:/dcache_tb/DUT/Blk1_Tag
+add wave -position 17  sim:/dcache_tb/DUT/Blk2_Tag
+add wave -position 4  sim:/dcache_tb/DUT/Blk1_Valid
+add wave -position 4  sim:/dcache_tb/DUT/Blk2_Valid
+add wave -position 4  sim:/dcache_tb/DUT/Blk1_mru
+add wave -position 4  sim:/dcache_tb/DUT/Blk2_mru
+add wave -position 4  sim:/dcache_tb/DUT/Blk1_Dirty
+add wave -position 4  sim:/dcache_tb/DUT/Blk2_Dirty
+add wave -position 4  sim:/dcache_tb/DUT/blk1en
+add wave -position 4  sim:/dcache_tb/DUT/blk2en
+add wave -position 4  sim:/dcache_tb/DUT/word1en
+add wave -position 4  sim:/dcache_tb/DUT/word2en
+add wave -position 4  sim:/dcache_tb/DUT/writeb1w1
+add wave -position 4  sim:/dcache_tb/DUT/writeb1w2
+add wave -position 4  sim:/dcache_tb/DUT/writeb2w1
+add wave -position 4  sim:/dcache_tb/DUT/writeb2w2
+add wave -position 4  sim:/dcache_tb/DUT/ndirty1
+add wave -position 4  sim:/dcache_tb/DUT/ndirty2
+add wave -position 4  sim:/dcache_tb/DUT/nextTag1
+add wave -position 4  sim:/dcache_tb/DUT/nextTag2
+add wave -position 4  sim:/dcache_tb/DUT/nextword
+add wave -position 4  sim:/dcache_tb/DUT/nmru1
+add wave -position 4  sim:/dcache_tb/DUT/nmru2
+add wave -position 4  sim:/dcache_tb/DUT/valid1
+add wave -position 4  sim:/dcache_tb/DUT/valid2
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/ecegrid/a/mg249/ece437/kongsi/ece437/scripts/dcache.do
+make dcache
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# make[1]: Nothing to be done for `dcache'.
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+make dcache_tb
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  testbench/dcache_tb.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling interface cpu_ram_if
+# -- Compiling module dcache_tb
+# -- Compiling program test
+# 
+# Top level modules:
+# 	dcache_tb
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000840
+# dmemaddr: 00000844
+# dmemaddr: 00000848
+# dmemaddr: 0000084c
+# dmemaddr: 00000850
+# dmemaddr: 00000854
+# dmemaddr: 00000858
+# dmemaddr: 0000085c
+# dmemaddr: 00000860
+# dmemaddr: 00000864
+# dmemaddr: 00000868
+# dmemaddr: 0000086c
+# dmemaddr: 00000870
+# dmemaddr: 00000874
+# dmemaddr: 00000878
+# dmemaddr: 0000087c
+# dmemaddr: 00000880
+# dmemaddr: 00000884
+# dmemaddr: 00000888
+# dmemaddr: 0000088c
+# dmemaddr: 00000890
+# dmemaddr: 00000894
+# dmemaddr: 00000898
+# dmemaddr: 0000089c
+# dmemaddr: 000008a0
+# dmemaddr: 000008a4
+# dmemaddr: 000008a8
+# dmemaddr: 000008ac
+# dmemaddr: 000008b0
+# dmemaddr: 000008b4
+# dmemaddr: 000008b8
+# dmemaddr: 000008bc
+# Break in Module test at testbench/dcache_tb.sv line 92
+# Causality operation skipped due to absence of debug database file
+make dcache
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  source/dcache.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling module dcache
+# ** Note: (vlog-143) Recognized 1 FSM in module "dcache(verilog)".
+# 
+# Top level modules:
+# 	dcache
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -all
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000840
+# dmemaddr: 00000844
+# dmemaddr: 00000848
+# dmemaddr: 0000084c
+# dmemaddr: 00000850
+# dmemaddr: 00000854
+# dmemaddr: 00000858
+# dmemaddr: 0000085c
+# dmemaddr: 00000860
+# dmemaddr: 00000864
+# dmemaddr: 00000868
+# dmemaddr: 0000086c
+# dmemaddr: 00000870
+# dmemaddr: 00000874
+# dmemaddr: 00000878
+# dmemaddr: 0000087c
+# dmemaddr: 00000880
+# dmemaddr: 00000884
+# dmemaddr: 00000888
+# dmemaddr: 0000088c
+# dmemaddr: 00000890
+# dmemaddr: 00000894
+# dmemaddr: 00000898
+# dmemaddr: 0000089c
+# dmemaddr: 000008a0
+# dmemaddr: 000008a4
+# dmemaddr: 000008a8
+# dmemaddr: 000008ac
+# dmemaddr: 000008b0
+# dmemaddr: 000008b4
+# dmemaddr: 000008b8
+# dmemaddr: 000008bc
+# Break in Module test at testbench/dcache_tb.sv line 92
+asm asmFiles/dcache.asm
+restart -f; run -all
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000840
+# dmemaddr: 00000844
+# dmemaddr: 00000848
+# dmemaddr: 0000084c
+# dmemaddr: 00000850
+# dmemaddr: 00000854
+# dmemaddr: 00000858
+# dmemaddr: 0000085c
+# dmemaddr: 00000860
+# dmemaddr: 00000864
+# dmemaddr: 00000868
+# dmemaddr: 0000086c
+# dmemaddr: 00000870
+# dmemaddr: 00000874
+# dmemaddr: 00000878
+# dmemaddr: 0000087c
+# dmemaddr: 00000880
+# dmemaddr: 00000884
+# dmemaddr: 00000888
+# dmemaddr: 0000088c
+# dmemaddr: 00000890
+# dmemaddr: 00000894
+# dmemaddr: 00000898
+# dmemaddr: 0000089c
+# dmemaddr: 000008a0
+# dmemaddr: 000008a4
+# dmemaddr: 000008a8
+# dmemaddr: 000008ac
+# dmemaddr: 000008b0
+# dmemaddr: 000008b4
+# dmemaddr: 000008b8
+# dmemaddr: 000008bc
+# Break in Module test at testbench/dcache_tb.sv line 92
+make dcache_tb.wlf
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# make[1]: Nothing to be done for `dcache_tb.wlf'.
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+make dcache
+# make[1]: Entering directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+# vlog +acc -sv12compat -mfcu -lint +incdir+include  source/dcache.sv
+# Model Technology ModelSim SE-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package cpu_types_pkg
+# -- Compiling interface datapath_cache_if
+# -- Importing package cpu_types_pkg
+# -- Compiling interface cache_control_if
+# -- Compiling module dcache
+# ** Note: (vlog-143) Recognized 1 FSM in module "dcache(verilog)".
+# 
+# Top level modules:
+# 	dcache
+# make[1]: Leaving directory `/home/ecegrid/a/mg249/ece437/kongsi/ece437'
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000840
+# dmemaddr: 00000844
+# dmemaddr: 00000848
+# dmemaddr: 0000084c
+# dmemaddr: 00000850
+# dmemaddr: 00000854
+# dmemaddr: 00000858
+# dmemaddr: 0000085c
+# dmemaddr: 00000860
+# dmemaddr: 00000864
+# dmemaddr: 00000868
+# dmemaddr: 0000086c
+# dmemaddr: 00000870
+# dmemaddr: 00000874
+# dmemaddr: 00000878
+# dmemaddr: 0000087c
+# dmemaddr: 00000880
+# dmemaddr: 00000884
+# dmemaddr: 00000888
+# dmemaddr: 0000088c
+# dmemaddr: 00000890
+# dmemaddr: 00000894
+# dmemaddr: 00000898
+# dmemaddr: 0000089c
+# dmemaddr: 000008a0
+# dmemaddr: 000008a4
+# dmemaddr: 000008a8
+# dmemaddr: 000008ac
+# dmemaddr: 000008b0
+# dmemaddr: 000008b4
+# dmemaddr: 000008b8
+# dmemaddr: 000008bc
+# Break in Module test at testbench/dcache_tb.sv line 92
+asm asmFiles/dcache.asm
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000840
+# dmemaddr: 00000844
+# dmemaddr: 00000848
+# dmemaddr: 0000084c
+# dmemaddr: 00000850
+# dmemaddr: 00000854
+# dmemaddr: 00000858
+# dmemaddr: 0000085c
+# dmemaddr: 00000860
+# dmemaddr: 00000864
+# dmemaddr: 00000868
+# dmemaddr: 0000086c
+# dmemaddr: 00000870
+# dmemaddr: 00000874
+# dmemaddr: 00000878
+# dmemaddr: 0000087c
+# dmemaddr: 00000880
+# dmemaddr: 00000884
+# dmemaddr: 00000888
+# dmemaddr: 0000088c
+# dmemaddr: 00000890
+# dmemaddr: 00000894
+# dmemaddr: 00000898
+# dmemaddr: 0000089c
+# dmemaddr: 000008a0
+# dmemaddr: 000008a4
+# dmemaddr: 000008a8
+# dmemaddr: 000008ac
+# dmemaddr: 000008b0
+# dmemaddr: 000008b4
+# dmemaddr: 000008b8
+# dmemaddr: 000008bc
+# Break in Module test at testbench/dcache_tb.sv line 92
+add wave -position 9  sim:/dcache_tb/DUT/dcif/dmemaddr
+asm asmFiles/dcache.asm
+restart -f; run -a
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.dcache_tb
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.test
+# Loading work.ram
+# Loading work.memory_control
+# Loading work.dcache
+# reset
+# First fetch
+# dmemaddr: 00000800
+# dmemaddr: 00000804
+# dmemaddr: 00000808
+# dmemaddr: 0000080c
+# dmemaddr: 00000810
+# dmemaddr: 00000814
+# dmemaddr: 00000818
+# dmemaddr: 0000081c
+# dmemaddr: 00000820
+# dmemaddr: 00000824
+# dmemaddr: 00000828
+# dmemaddr: 0000082c
+# dmemaddr: 00000830
+# dmemaddr: 00000834
+# dmemaddr: 00000838
+# dmemaddr: 0000083c
+# dmemaddr: 00000840
+# dmemaddr: 00000844
+# dmemaddr: 00000848
+# dmemaddr: 0000084c
+# dmemaddr: 00000850
+# dmemaddr: 00000854
+# dmemaddr: 00000858
+# dmemaddr: 0000085c
+# dmemaddr: 00000860
+# dmemaddr: 00000864
+# dmemaddr: 00000868
+# dmemaddr: 0000086c
+# dmemaddr: 00000870
+# dmemaddr: 00000874
+# dmemaddr: 00000878
+# dmemaddr: 0000087c
+# dmemaddr: 00000880
+# dmemaddr: 00000884
+# dmemaddr: 00000888
+# dmemaddr: 0000088c
+# dmemaddr: 00000890
+# dmemaddr: 00000894
+# dmemaddr: 00000898
+# dmemaddr: 0000089c
+# dmemaddr: 000008a0
+# dmemaddr: 000008a4
+# dmemaddr: 000008a8
+# dmemaddr: 000008ac
+# dmemaddr: 000008b0
+# dmemaddr: 000008b4
+# dmemaddr: 000008b8
+# dmemaddr: 000008bc
+# Break in Module test at testbench/dcache_tb.sv line 92
